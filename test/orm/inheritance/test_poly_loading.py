@@ -1,21 +1,21 @@
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectin_polymorphic
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertsql import AllOf
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import EachOf
-from sqlalchemy.testing.assertsql import Or
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import selectin_polymorphic
+from sqlalchemy_1_3.orm import selectinload
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import with_polymorphic
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertsql import AllOf
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.assertsql import EachOf
+from sqlalchemy_1_3.testing.assertsql import Or
 from ._poly_fixtures import _Polymorphic
 from ._poly_fixtures import Company
 from ._poly_fixtures import Engineer
@@ -424,7 +424,7 @@ class TestGeometries(GeometryFixtureBase):
         sess.add_all([d(d_data="d1"), e(e_data="e1")])
         sess.commit()
 
-        from sqlalchemy import select
+        from sqlalchemy_1_3 import select
 
         a_table, c_table, d_table, e_table = self.tables("a", "c", "d", "e")
 

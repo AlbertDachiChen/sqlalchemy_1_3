@@ -1,35 +1,35 @@
 import time
 
-import sqlalchemy as tsa
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import pool
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.engine import url
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_raises_message_context_ok
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.mock import patch
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import sqlalchemy_1_3 as tsa
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import pool
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.engine import url
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assert_raises_message_context_ok
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.mock import patch
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
 
 
 class MockError(Exception):
@@ -536,8 +536,8 @@ class MockReconnectTest(fixtures.TestBase):
         )
 
     def test_dialect_initialize_once(self):
-        from sqlalchemy.engine.url import URL
-        from sqlalchemy.engine.default import DefaultDialect
+        from sqlalchemy_1_3.engine.url import URL
+        from sqlalchemy_1_3.engine.default import DefaultDialect
 
         dbapi = self.dbapi
 
@@ -565,8 +565,8 @@ class MockReconnectTest(fixtures.TestBase):
         eq_(Dialect.initialize.call_count, 1)
 
     def test_dialect_initialize_retry_if_exception(self):
-        from sqlalchemy.engine.url import URL
-        from sqlalchemy.engine.default import DefaultDialect
+        from sqlalchemy_1_3.engine.url import URL
+        from sqlalchemy_1_3.engine.default import DefaultDialect
 
         dbapi = self.dbapi
 
@@ -730,7 +730,7 @@ class CursorErrTest(fixtures.TestBase):
 
         dbapi = MockDBAPI()
 
-        from sqlalchemy.engine import default
+        from sqlalchemy_1_3.engine import default
 
         url = Mock(
             get_dialect=lambda: default.DefaultDialect,

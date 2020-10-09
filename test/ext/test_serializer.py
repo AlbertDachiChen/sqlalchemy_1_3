@@ -1,31 +1,31 @@
 # coding: utf-8
 
-from sqlalchemy import desc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext import serializer
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import ue
+from sqlalchemy_1_3 import desc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import join
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext import serializer
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import scoped_session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.util import ue
 
 
 def pickle_protocols():
@@ -235,7 +235,7 @@ class SerializeTest(AssertsCompiledSQL, fixtures.MappedTest):
 
     @testing.requires.non_broken_pickle
     def test_orm_join(self):
-        from sqlalchemy.orm.util import join
+        from sqlalchemy_1_3.orm.util import join
 
         j = join(User, Address, User.addresses)
 

@@ -1,33 +1,33 @@
 """Test the TextClause and related constructs."""
 
-from sqlalchemy import and_
-from sqlalchemy import asc
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import desc
-from sqlalchemy import exc
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import union
-from sqlalchemy import util
-from sqlalchemy.sql import column
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.types import NullType
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import asc
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import desc
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import quoted_name
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.types import NullType
 
 table1 = table(
     "mytable",
@@ -728,7 +728,7 @@ class OrderByLabelResolutionTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_unresolvable_distinct_label(self):
-        from sqlalchemy.dialects import postgresql
+        from sqlalchemy_1_3.dialects import postgresql
 
         stmt = select([table1.c.myid.label("foo")]).distinct("not a label")
         self._test_exception(stmt, "not a label", dialect=postgresql.dialect())

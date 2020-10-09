@@ -1,30 +1,30 @@
 #! coding:utf-8
 
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import text
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects import sqlite
-from sqlalchemy.engine import default
-from sqlalchemy.sql import crud
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import insert
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import table
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3.dialects import mysql
+from sqlalchemy_1_3.dialects import postgresql
+from sqlalchemy_1_3.dialects import sqlite
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.sql import crud
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
 
 
 class _InsertTestBase(object):
@@ -568,7 +568,7 @@ class InsertTest(_InsertTestBase, fixtures.TablesTest, AssertsCompiledSQL):
 
     def test_insert_from_select_dont_mutate_raw_columns(self):
         # test [ticket:3603]
-        from sqlalchemy import table
+        from sqlalchemy_1_3 import table
 
         table_ = table(
             "mytable",

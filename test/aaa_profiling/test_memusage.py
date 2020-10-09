@@ -4,43 +4,43 @@ import itertools
 import multiprocessing
 import weakref
 
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Unicode
-from sqlalchemy import util
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import join as orm_join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm.mapper import _mapper_registry
-from sqlalchemy.orm.session import _sessions
-from sqlalchemy.processors import to_decimal_processor_factory
-from sqlalchemy.processors import to_unicode_processor_factory
-from sqlalchemy.sql import column
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.visitors import cloned_traverse
-from sqlalchemy.sql.visitors import replacement_traverse
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import join as orm_join
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import Load
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import selectinload
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm.mapper import _mapper_registry
+from sqlalchemy_1_3.orm.session import _sessions
+from sqlalchemy_1_3.processors import to_decimal_processor_factory
+from sqlalchemy_1_3.processors import to_unicode_processor_factory
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.sql.visitors import cloned_traverse
+from sqlalchemy_1_3.sql.visitors import replacement_traverse
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
 from ..orm import _fixtures
 
 
@@ -212,7 +212,7 @@ class MemUsageTest(EnsureZeroed):
     __requires__ = ("cpython",)
 
     def test_type_compile(self):
-        from sqlalchemy.dialects.sqlite.base import dialect as SQLiteDialect
+        from sqlalchemy_1_3.dialects.sqlite.base import dialect as SQLiteDialect
 
         cast = sa.cast(column("x"), sa.Integer)
 
@@ -251,8 +251,8 @@ class MemUsageTest(EnsureZeroed):
         """test storage of bind processors, result processors
         in dialect-wide registry."""
 
-        from sqlalchemy.dialects import mysql, postgresql, sqlite
-        from sqlalchemy import types
+        from sqlalchemy_1_3.dialects import mysql, postgresql, sqlite
+        from sqlalchemy_1_3 import types
 
         eng = engines.testing_engine()
         for args in (
@@ -1376,7 +1376,7 @@ class CycleTest(_fixtures.FixtureTest):
     @testing.provide_metadata
     def test_optimized_get(self):
 
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         Base = declarative_base(metadata=self.metadata)
 
@@ -1412,8 +1412,8 @@ class CycleTest(_fixtures.FixtureTest):
     def test_visit_binary_product(self):
         a, b, q, e, f, j, r = [column(chr_) for chr_ in "abqefjr"]
 
-        from sqlalchemy import and_, func
-        from sqlalchemy.sql.util import visit_binary_product
+        from sqlalchemy_1_3 import and_, func
+        from sqlalchemy_1_3.sql.util import visit_binary_product
 
         expr = and_((a + b) == q + func.sum(e + f), j == r)
 

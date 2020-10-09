@@ -5,91 +5,91 @@ import importlib
 import operator
 import os
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import ARRAY
-from sqlalchemy import BigInteger
-from sqlalchemy import bindparam
-from sqlalchemy import BLOB
-from sqlalchemy import BOOLEAN
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import CHAR
-from sqlalchemy import CLOB
-from sqlalchemy import DATE
-from sqlalchemy import Date
-from sqlalchemy import DATETIME
-from sqlalchemy import DateTime
-from sqlalchemy import DECIMAL
-from sqlalchemy import dialects
-from sqlalchemy import distinct
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import FLOAT
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import inspection
-from sqlalchemy import INTEGER
-from sqlalchemy import Integer
-from sqlalchemy import Interval
-from sqlalchemy import JSON
-from sqlalchemy import LargeBinary
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import NCHAR
-from sqlalchemy import NUMERIC
-from sqlalchemy import Numeric
-from sqlalchemy import NVARCHAR
-from sqlalchemy import PickleType
-from sqlalchemy import REAL
-from sqlalchemy import select
-from sqlalchemy import SMALLINT
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import TIME
-from sqlalchemy import Time
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import type_coerce
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types
-from sqlalchemy import Unicode
-from sqlalchemy import util
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import default
-from sqlalchemy.schema import AddConstraint
-from sqlalchemy.schema import CheckConstraint
-from sqlalchemy.sql import column
-from sqlalchemy.sql import ddl
-from sqlalchemy.sql import null
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.sql import table
-from sqlalchemy.sql import visitors
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import pickleable
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.testing.util import round_decimal
-from sqlalchemy.util import OrderedDict
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import ARRAY
+from sqlalchemy_1_3 import BigInteger
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import BLOB
+from sqlalchemy_1_3 import BOOLEAN
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import CHAR
+from sqlalchemy_1_3 import CLOB
+from sqlalchemy_1_3 import DATE
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import DATETIME
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import DECIMAL
+from sqlalchemy_1_3 import dialects
+from sqlalchemy_1_3 import distinct
+from sqlalchemy_1_3 import Enum
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import FLOAT
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspection
+from sqlalchemy_1_3 import INTEGER
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import Interval
+from sqlalchemy_1_3 import JSON
+from sqlalchemy_1_3 import LargeBinary
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import NCHAR
+from sqlalchemy_1_3 import NUMERIC
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import NVARCHAR
+from sqlalchemy_1_3 import PickleType
+from sqlalchemy_1_3 import REAL
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import SMALLINT
+from sqlalchemy_1_3 import SmallInteger
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import TIME
+from sqlalchemy_1_3 import Time
+from sqlalchemy_1_3 import TIMESTAMP
+from sqlalchemy_1_3 import type_coerce
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import types
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3 import VARCHAR
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.schema import AddConstraint
+from sqlalchemy_1_3.schema import CheckConstraint
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import ddl
+from sqlalchemy_1_3.sql import null
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.sql import sqltypes
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql import visitors
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing import pickleable
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import picklers
+from sqlalchemy_1_3.testing.util import round_decimal
+from sqlalchemy_1_3.util import OrderedDict
 
 
 def _all_dialect_modules():
     return [
-        importlib.import_module("sqlalchemy.dialects.%s" % d)
+        importlib.import_module("sqlalchemy_1_3.dialects.%s" % d)
         for d in dialects.__all__
         if not d.startswith("_")
     ]
@@ -206,7 +206,7 @@ class AdaptTest(fixtures.TestBase):
                 if (
                     subcl is not typ
                     and typ is not TypeDecorator
-                    and "sqlalchemy" in subcl.__module__
+                    and "sqlalchemy_1_3" in subcl.__module__
                 ):
                     yield "%s.%s" % (
                         subcl.__module__,
@@ -338,7 +338,7 @@ class TypeAffinityTest(fixtures.TestBase):
         eq_(t1._compare_type_affinity(t2), comp, "%s %s" % (t1, t2))
 
     def test_decorator_doesnt_cache(self):
-        from sqlalchemy.dialects import postgresql
+        from sqlalchemy_1_3.dialects import postgresql
 
         class MyType(TypeDecorator):
             impl = CHAR
@@ -1796,7 +1796,7 @@ class EnumTest(AssertsCompiledSQL, fixtures.TablesTest):
         )
 
     def test_adapt(self):
-        from sqlalchemy.dialects.postgresql import ENUM
+        from sqlalchemy_1_3.dialects.postgresql import ENUM
 
         e1 = Enum("one", "two", "three", native_enum=False)
 
@@ -1837,7 +1837,7 @@ class EnumTest(AssertsCompiledSQL, fixtures.TablesTest):
         eq_(e1_vc.adapt(ENUM).enums, ["1", "2", "3", "a", "b"])
 
     def test_adapt_length(self):
-        from sqlalchemy.dialects.postgresql import ENUM
+        from sqlalchemy_1_3.dialects.postgresql import ENUM
 
         e1 = Enum("one", "two", "three", length=50, native_enum=False)
         eq_(e1.adapt(ENUM).length, 50)
@@ -2583,7 +2583,7 @@ class ExpressionTest(
         is_(expr.right.type, my_datetime_variant)
 
     def test_bind_typing(self):
-        from sqlalchemy.sql import column
+        from sqlalchemy_1_3.sql import column
 
         class MyFoobarType(types.UserDefinedType):
             pass
@@ -2790,7 +2790,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
         self.assert_compile(types.DECIMAL(2, 4), "DECIMAL(2, 4)")
 
     def test_kwarg_legacy_typecompiler(self):
-        from sqlalchemy.sql import compiler
+        from sqlalchemy_1_3.sql import compiler
 
         class SomeTypeCompiler(compiler.GenericTypeCompiler):
             # transparently decorated w/ kw decorator

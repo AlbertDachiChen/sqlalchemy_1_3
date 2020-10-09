@@ -1,9 +1,9 @@
-from sqlalchemy import extract
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy.databases import sybase
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3.databases import sybase
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import fixtures
 
 
 class CompileTest(fixtures.TestBase, AssertsCompiledSQL):

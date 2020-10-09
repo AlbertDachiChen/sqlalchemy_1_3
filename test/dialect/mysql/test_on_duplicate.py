@@ -1,15 +1,15 @@
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.dialects.mysql import insert
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import eq_
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.dialects.mysql import insert
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertions import assert_raises
+from sqlalchemy_1_3.testing.assertions import eq_
 
 
 class OnDuplicateTest(fixtures.TablesTest):

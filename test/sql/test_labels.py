@@ -1,23 +1,23 @@
-from sqlalchemy import bindparam
-from sqlalchemy import exc as exceptions
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.sql.elements import _truncated_label
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import exc as exceptions
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql.elements import _truncated_label
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 IDENT_LENGTH = 29
 

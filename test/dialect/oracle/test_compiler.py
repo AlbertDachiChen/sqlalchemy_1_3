@@ -1,41 +1,41 @@
 # coding: utf-8
 
 
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import Computed
-from sqlalchemy import exc
-from sqlalchemy import except_
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import outerjoin
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import type_coerce
-from sqlalchemy import TypeDecorator
-from sqlalchemy import union
-from sqlalchemy.dialects.oracle import base as oracle
-from sqlalchemy.dialects.oracle import cx_oracle
-from sqlalchemy.engine import default
-from sqlalchemy.sql import column
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import table
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import except_
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import outerjoin
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import type_coerce
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3.dialects.oracle import base as oracle
+from sqlalchemy_1_3.dialects.oracle import cx_oracle
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import quoted_name
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class CompileTest(fixtures.TestBase, AssertsCompiledSQL):

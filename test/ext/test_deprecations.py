@@ -1,5 +1,5 @@
-from sqlalchemy import testing
-from sqlalchemy.orm import mapper
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import mapper
 from . import test_mutable
 from .test_mutable import Foo
 

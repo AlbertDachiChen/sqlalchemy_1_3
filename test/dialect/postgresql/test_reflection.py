@@ -4,34 +4,34 @@ import itertools
 from operator import itemgetter
 import re
 
-import sqlalchemy as sa
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import MetaData
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.dialects.postgresql import ARRAY
-from sqlalchemy.dialects.postgresql import base as postgresql
-from sqlalchemy.dialects.postgresql import ExcludeConstraint
-from sqlalchemy.dialects.postgresql import INTEGER
-from sqlalchemy.dialects.postgresql import INTERVAL
-from sqlalchemy.dialects.postgresql import TSRANGE
-from sqlalchemy.engine import reflection
-from sqlalchemy.sql.schema import CheckConstraint
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import AssertsExecutionResults
-from sqlalchemy.testing.assertions import eq_
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import join
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import PrimaryKeyConstraint
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3.dialects.postgresql import ARRAY
+from sqlalchemy_1_3.dialects.postgresql import base as postgresql
+from sqlalchemy_1_3.dialects.postgresql import ExcludeConstraint
+from sqlalchemy_1_3.dialects.postgresql import INTEGER
+from sqlalchemy_1_3.dialects.postgresql import INTERVAL
+from sqlalchemy_1_3.dialects.postgresql import TSRANGE
+from sqlalchemy_1_3.engine import reflection
+from sqlalchemy_1_3.sql.schema import CheckConstraint
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.assertions import assert_raises
+from sqlalchemy_1_3.testing.assertions import AssertsExecutionResults
+from sqlalchemy_1_3.testing.assertions import eq_
 
 
 class ForeignTableReflectionTest(fixtures.TablesTest, AssertsExecutionResults):
@@ -43,7 +43,7 @@ class ForeignTableReflectionTest(fixtures.TablesTest, AssertsExecutionResults):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.testing import config
+        from sqlalchemy_1_3.testing import config
 
         dblink = config.file_config.get(
             "sqla_testing", "postgres_test_db_link"
@@ -398,7 +398,7 @@ class DomainReflectionTest(fixtures.TestBase, AssertsExecutionResults):
         ), "Expected reflected column to be nullable."
 
     def test_unknown_types(self):
-        from sqlalchemy.databases import postgresql
+        from sqlalchemy_1_3.databases import postgresql
 
         ischema_names = postgresql.PGDialect.ischema_names
         postgresql.PGDialect.ischema_names = {}

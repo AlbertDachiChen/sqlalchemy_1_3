@@ -27,7 +27,7 @@ bootstrap_file = os.path.join(
     os.path.dirname(__file__),
     "..",
     "lib",
-    "sqlalchemy",
+    "sqlalchemy_1_3",
     "testing",
     "plugin",
     "bootstrap.py",

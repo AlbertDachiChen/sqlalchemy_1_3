@@ -42,8 +42,8 @@ Version Check
 
 A quick check to verify that we are on at least **version 1.3** of SQLAlchemy::
 
-    >>> import sqlalchemy
-    >>> sqlalchemy.__version__ # doctest:+SKIP
+    >>> import sqlalchemy_1_3
+    >>> sqlalchemy_1_3.__version__ # doctest:+SKIP
     1.3.0
 
 Connecting
@@ -52,7 +52,7 @@ Connecting
 For this tutorial we will use an in-memory-only SQLite database. To connect we
 use :func:`~sqlalchemy.create_engine`::
 
-    >>> from sqlalchemy import create_engine
+    >>> from sqlalchemy_1_3 import create_engine
     >>> engine = create_engine('sqlite:///:memory:', echo=True)
 
 The ``echo`` flag is a shortcut to setting up SQLAlchemy logging, which is
@@ -104,7 +104,7 @@ application will usually have just one instance of this base in a commonly
 imported module.   We create the base class using the :func:`.declarative_base`
 function, as follows::
 
-    >>> from sqlalchemy.ext.declarative import declarative_base
+    >>> from sqlalchemy_1_3.ext.declarative import declarative_base
 
     >>> Base = declarative_base()
 
@@ -115,7 +115,7 @@ A new class called ``User`` will be the class to which we map this table.  Withi
 the class, we define details about the table to which we'll be mapping, primarily
 the table name, and names and datatypes of columns::
 
-    >>> from sqlalchemy import Column, Integer, String
+    >>> from sqlalchemy_1_3 import Column, Integer, String
     >>> class User(Base):
     ...     __tablename__ = 'users'
     ...
@@ -242,7 +242,7 @@ the actual ``CREATE TABLE`` statement:
     primary key identifiers, and SQLAlchemy doesn't generate or assume these
     without being instructed. For that, you use the :class:`~sqlalchemy.schema.Sequence` construct::
 
-        from sqlalchemy import Sequence
+        from sqlalchemy_1_3 import Sequence
         Column(Integer, Sequence('user_id_seq'), primary_key=True)
 
     A full, foolproof :class:`~sqlalchemy.schema.Table` generated via our declarative
@@ -306,7 +306,7 @@ statement, we define a :class:`~sqlalchemy.orm.session.Session` class which
 will serve as a factory for new :class:`~sqlalchemy.orm.session.Session`
 objects::
 
-    >>> from sqlalchemy.orm import sessionmaker
+    >>> from sqlalchemy_1_3.orm import sessionmaker
     >>> Session = sessionmaker(bind=engine)
 
 In the case where your application does not yet have an
@@ -660,7 +660,7 @@ entities are present in the call to :meth:`~.Session.query`, can be controlled u
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy.orm import aliased
+    >>> from sqlalchemy_1_3.orm import aliased
     >>> user_alias = aliased(User, name='user_alias')
 
     {sql}>>> for row in session.query(user_alias, user_alias.name).all():
@@ -784,7 +784,7 @@ Here's a rundown of some of the most common operators used in
     ))
 
     # use tuple_() for composite (multi-column) queries
-    from sqlalchemy import tuple_
+    from sqlalchemy_1_3 import tuple_
     query.filter(
         tuple_(User.name, User.nickname).\
         in_([('ed', 'edsnickname'), ('wendy', 'windy')])
@@ -811,7 +811,7 @@ Here's a rundown of some of the most common operators used in
 * :func:`AND <.sql.expression.and_>`::
 
     # use and_()
-    from sqlalchemy import and_
+    from sqlalchemy_1_3 import and_
     query.filter(and_(User.name == 'ed', User.fullname == 'Ed Jones'))
 
     # or send multiple expressions to .filter()
@@ -825,7 +825,7 @@ Here's a rundown of some of the most common operators used in
 
 * :func:`OR <.sql.expression.or_>`::
 
-    from sqlalchemy import or_
+    from sqlalchemy_1_3 import or_
     query.filter(or_(User.name == 'ed', User.name == 'wendy'))
 
  .. note::  Make sure you use :func:`.or_` and **not** the
@@ -955,7 +955,7 @@ by most applicable methods.  For example,
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy import text
+    >>> from sqlalchemy_1_3 import text
     {sql}>>> for user in session.query(User).\
     ...             filter(text("id<224")).\
     ...             order_by(text("id")).all():
@@ -1096,7 +1096,7 @@ use it to return the count of each distinct user name:
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy import func
+    >>> from sqlalchemy_1_3 import func
     {sql}>>> session.query(func.count(User.name), User.name).group_by(User.name).all()
     SELECT count(users.name) AS count_1, users.name AS users_name
     FROM users GROUP BY users.name
@@ -1138,8 +1138,8 @@ declarative, we define this table along with its mapped class, ``Address``:
 
 .. sourcecode:: python
 
-    >>> from sqlalchemy import ForeignKey
-    >>> from sqlalchemy.orm import relationship
+    >>> from sqlalchemy_1_3 import ForeignKey
+    >>> from sqlalchemy_1_3.orm import relationship
 
     >>> class Address(Base):
     ...     __tablename__ = 'addresses'
@@ -1431,7 +1431,7 @@ distinct email addresses at the same time:
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy.orm import aliased
+    >>> from sqlalchemy_1_3.orm import aliased
     >>> adalias1 = aliased(Address)
     >>> adalias2 = aliased(Address)
     {sql}>>> for username, email1, email2 in \
@@ -1481,7 +1481,7 @@ representing the statement generated by a particular
 :class:`~sqlalchemy.orm.query.Query` - this is an instance of a :func:`_expression.select`
 construct, which are described in :ref:`sqlexpression_toplevel`::
 
-    >>> from sqlalchemy.sql import func
+    >>> from sqlalchemy_1_3.sql import func
     >>> stmt = session.query(Address.user_id, func.count('*').\
     ...         label('address_count')).\
     ...         group_by(Address.user_id).subquery()
@@ -1565,7 +1565,7 @@ There is an explicit EXISTS construct, which looks like this:
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy.sql import exists
+    >>> from sqlalchemy_1_3.sql import exists
     >>> stmt = exists().where(Address.user_id==User.id)
     {sql}>>> for name, in session.query(User.name).filter(stmt):
     ...     print(name)
@@ -1690,7 +1690,7 @@ at once:
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy.orm import selectinload
+    >>> from sqlalchemy_1_3.orm import selectinload
     {sql}>>> jack = session.query(User).\
     ...                 options(selectinload(User.addresses)).\
     ...                 filter_by(name='jack').one()
@@ -1728,7 +1728,7 @@ will emit the extra join regardless:
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy.orm import joinedload
+    >>> from sqlalchemy_1_3.orm import joinedload
 
     {sql}>>> jack = session.query(User).\
     ...                        options(joinedload(User.addresses)).\
@@ -1792,7 +1792,7 @@ attribute:
 
 .. sourcecode:: python+sql
 
-    >>> from sqlalchemy.orm import contains_eager
+    >>> from sqlalchemy_1_3.orm import contains_eager
     {sql}>>> jacks_addresses = session.query(Address).\
     ...                             join(Address.user).\
     ...                             filter(User.name=='jack').\
@@ -2011,7 +2011,7 @@ We'll make our application a blog application, where users can write
 For a plain many-to-many, we need to create an un-mapped :class:`_schema.Table` construct
 to serve as the association table.  This looks like the following::
 
-    >>> from sqlalchemy import Table, Text
+    >>> from sqlalchemy_1_3 import Table, Text
     >>> # association table
     >>> post_keywords = Table('post_keywords', Base.metadata,
     ...     Column('post_id', ForeignKey('posts.id'), primary_key=True),

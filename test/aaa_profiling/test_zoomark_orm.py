@@ -2,21 +2,21 @@ from __future__ import unicode_literals
 
 import datetime
 
-from sqlalchemy import and_
-from sqlalchemy import Column
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import Table
-from sqlalchemy import Time
-from sqlalchemy import Unicode
-from sqlalchemy.orm import mapper
-from sqlalchemy.testing import replay_fixture
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import Time
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.testing import replay_fixture
 
 
 """Benchmark for SQLAlchemy.

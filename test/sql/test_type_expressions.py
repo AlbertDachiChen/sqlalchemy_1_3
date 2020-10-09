@@ -1,16 +1,16 @@
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import func
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy import union
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
 
 
 class _ExprFixture(object):
@@ -99,7 +99,7 @@ class _ExprFixture(object):
             def column_expression(self, col):
                 return func.dialect_colexpr(col)
 
-        from sqlalchemy.engine import default
+        from sqlalchemy_1_3.engine import default
 
         dialect = default.DefaultDialect()
         dialect.colspecs = {String: ImplString}

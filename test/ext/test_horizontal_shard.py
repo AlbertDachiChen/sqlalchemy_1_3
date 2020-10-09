@@ -1,35 +1,35 @@
 import datetime
 import os
 
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import event
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.ext.horizontal_shard import ShardedSession
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.pool import SingletonThreadPool
-from sqlalchemy.sql import operators
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import provision
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.engines import testing_reaper
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.ext.horizontal_shard import ShardedSession
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import selectinload
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.pool import SingletonThreadPool
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import provision
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.engines import testing_reaper
 
 
 # TODO: ShardTest can be turned into a base for further subclasses
@@ -263,7 +263,7 @@ class ShardTest(object):
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from sqlalchemy_1_3.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 
@@ -280,7 +280,7 @@ class ShardTest(object):
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from sqlalchemy_1_3.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 
@@ -301,7 +301,7 @@ class ShardTest(object):
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from sqlalchemy_1_3.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 
@@ -348,7 +348,7 @@ class ShardTest(object):
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from sqlalchemy_1_3.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 

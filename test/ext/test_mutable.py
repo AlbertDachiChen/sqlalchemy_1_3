@@ -1,34 +1,34 @@
 import copy
 import pickle
 
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import util
-from sqlalchemy.ext.mutable import MutableComposite
-from sqlalchemy.ext.mutable import MutableDict
-from sqlalchemy.ext.mutable import MutableList
-from sqlalchemy.ext.mutable import MutableSet
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.instrumentation import ClassManager
-from sqlalchemy.orm.mapper import Mapper
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.types import PickleType
-from sqlalchemy.types import TypeDecorator
-from sqlalchemy.types import VARCHAR
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.ext.mutable import MutableComposite
+from sqlalchemy_1_3.ext.mutable import MutableDict
+from sqlalchemy_1_3.ext.mutable import MutableList
+from sqlalchemy_1_3.ext.mutable import MutableSet
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import composite
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.instrumentation import ClassManager
+from sqlalchemy_1_3.orm.mapper import Mapper
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import picklers
+from sqlalchemy_1_3.types import PickleType
+from sqlalchemy_1_3.types import TypeDecorator
+from sqlalchemy_1_3.types import VARCHAR
 
 
 class Foo(fixtures.BasicEntity):
@@ -572,39 +572,39 @@ class _MutableListTestBase(_MutableListTestFixture):
         if util.py3k:
             pickles = [
                 b"\x80\x04\x95<\x00\x00\x00\x00\x00\x00\x00\x8c\x16"
-                b"sqlalchemy.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
+                b"sqlalchemy_1_3.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
                 b"\x81\x94(K\x01K\x02e]\x94(K\x01K\x02eb.",
-                b"ccopy_reg\n_reconstructor\np0\n(csqlalchemy.ext.mutable\n"
+                b"ccopy_reg\n_reconstructor\np0\n(csqlalchemy_1_3.ext.mutable\n"
                 b"MutableList\np1\nc__builtin__\nlist\np2\n(lp3\nI1\naI2\n"
                 b"atp4\nRp5\n(lp6\nI1\naI2\nab.",
-                b"ccopy_reg\n_reconstructor\nq\x00(csqlalchemy.ext.mutable\n"
+                b"ccopy_reg\n_reconstructor\nq\x00(csqlalchemy_1_3.ext.mutable\n"
                 b"MutableList\nq\x01c__builtin__\nlist\nq\x02]q\x03(K\x01K"
                 b"\x02etq\x04Rq\x05]q\x06(K\x01K\x02eb.",
-                b"\x80\x02csqlalchemy.ext.mutable\nMutableList\nq\x00)\x81q"
+                b"\x80\x02csqlalchemy_1_3.ext.mutable\nMutableList\nq\x00)\x81q"
                 b"\x01(K\x01K\x02e]q\x02(K\x01K\x02eb.",
-                b"\x80\x03csqlalchemy.ext.mutable\nMutableList\nq\x00)\x81q"
+                b"\x80\x03csqlalchemy_1_3.ext.mutable\nMutableList\nq\x00)\x81q"
                 b"\x01(K\x01K\x02e]q\x02(K\x01K\x02eb.",
                 b"\x80\x04\x95<\x00\x00\x00\x00\x00\x00\x00\x8c\x16"
-                b"sqlalchemy.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
+                b"sqlalchemy_1_3.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
                 b"\x81\x94(K\x01K\x02e]\x94(K\x01K\x02eb.",
             ]
         else:
             pickles = [
-                "\x80\x02csqlalchemy.ext.mutable\nMutableList\nq\x00]q\x01"
+                "\x80\x02csqlalchemy_1_3.ext.mutable\nMutableList\nq\x00]q\x01"
                 "(K\x01K\x02e\x85q\x02Rq\x03.",
-                "\x80\x02csqlalchemy.ext.mutable\nMutableList"
+                "\x80\x02csqlalchemy_1_3.ext.mutable\nMutableList"
                 "\nq\x00]q\x01(K\x01K\x02e\x85q\x02Rq\x03.",
-                "csqlalchemy.ext.mutable\nMutableList\np0\n"
+                "csqlalchemy_1_3.ext.mutable\nMutableList\np0\n"
                 "((lp1\nI1\naI2\natp2\nRp3\n.",
-                "csqlalchemy.ext.mutable\nMutableList\nq\x00(]"
+                "csqlalchemy_1_3.ext.mutable\nMutableList\nq\x00(]"
                 "q\x01(K\x01K\x02etq\x02Rq\x03.",
-                "\x80\x02csqlalchemy.ext.mutable\nMutableList"
+                "\x80\x02csqlalchemy_1_3.ext.mutable\nMutableList"
                 "\nq\x01]q\x02(K\x01K\x02e\x85Rq\x03.",
-                "\x80\x02csqlalchemy.ext.mutable\nMutableList\n"
+                "\x80\x02csqlalchemy_1_3.ext.mutable\nMutableList\n"
                 "q\x01]q\x02(K\x01K\x02e\x85Rq\x03.",
-                "csqlalchemy.ext.mutable\nMutableList\np1\n"
+                "csqlalchemy_1_3.ext.mutable\nMutableList\np1\n"
                 "((lp2\nI1\naI2\natRp3\n.",
-                "csqlalchemy.ext.mutable\nMutableList\nq\x01"
+                "csqlalchemy_1_3.ext.mutable\nMutableList\nq\x01"
                 "(]q\x02(K\x01K\x02etRq\x03.",
             ]
 
@@ -946,7 +946,7 @@ class MutableColumnCopyJSONTest(_MutableDictTestBase, fixtures.MappedTest):
     @classmethod
     def define_tables(cls, metadata):
         import json
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         class JSONEncodedDict(TypeDecorator):
             impl = VARCHAR(50)
@@ -993,8 +993,8 @@ class MutableColumnCopyArrayTest(_MutableListTestBase, fixtures.MappedTest):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.ext.declarative import declarative_base
-        from sqlalchemy.sql.sqltypes import ARRAY
+        from sqlalchemy_1_3.ext.declarative import declarative_base
+        from sqlalchemy_1_3.sql.sqltypes import ARRAY
 
         MutableList = cls._type_fixture()
 
@@ -1235,7 +1235,7 @@ class _CompositeTestBase(object):
         )
 
     def setup(self):
-        from sqlalchemy.ext import mutable
+        from sqlalchemy_1_3.ext import mutable
 
         mutable._setup_composite_listener()
         super(_CompositeTestBase, self).setup()

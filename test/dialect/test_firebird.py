@@ -1,34 +1,34 @@
-from sqlalchemy import Column
-from sqlalchemy import Computed
-from sqlalchemy import exc
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import types as sqltypes
-from sqlalchemy import Unicode
-from sqlalchemy import update
-from sqlalchemy import VARCHAR
-from sqlalchemy.databases import firebird
-from sqlalchemy.exc import ProgrammingError
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import insert
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import types as sqltypes
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import update
+from sqlalchemy_1_3 import VARCHAR
+from sqlalchemy_1_3.databases import firebird
+from sqlalchemy_1_3.exc import ProgrammingError
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
 
 
 class DomainReflectionTest(fixtures.TestBase, AssertsExecutionResults):
@@ -85,7 +85,7 @@ class DomainReflectionTest(fixtures.TestBase, AssertsExecutionResults):
         con.execute("DROP GENERATOR gen_testtable_id")
 
     def test_table_is_reflected(self):
-        from sqlalchemy.types import (
+        from sqlalchemy_1_3.types import (
             Integer,
             Text,
             BLOB,

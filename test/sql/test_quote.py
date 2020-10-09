@@ -1,28 +1,28 @@
 #!coding: utf-8
 
-from sqlalchemy import CheckConstraint
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.sql import compiler
-from sqlalchemy.sql.elements import _anonymous_label
-from sqlalchemy.sql.elements import quoted_name
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.util import picklers
+from sqlalchemy_1_3 import CheckConstraint
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.sql import compiler
+from sqlalchemy_1_3.sql.elements import _anonymous_label
+from sqlalchemy_1_3.sql.elements import quoted_name
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.util import picklers
 
 
 class QuoteExecTest(fixtures.TestBase):

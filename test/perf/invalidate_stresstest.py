@@ -6,14 +6,14 @@ import sys
 
 import gevent.monkey
 
-from sqlalchemy import create_engine
-from sqlalchemy import event
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import event
 
 
 gevent.monkey.patch_all()  # noqa
 
 logging.basicConfig()  # noqa
-# logging.getLogger("sqlalchemy.pool").setLevel(logging.INFO)
+# logging.getLogger("sqlalchemy_1_3.pool").setLevel(logging.INFO)
 
 engine = create_engine(
     "mysql+pymysql://scott:tiger@localhost/test", pool_size=50, max_overflow=0

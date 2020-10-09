@@ -3,35 +3,35 @@ from collections import OrderedDict
 import datetime
 import decimal
 
-from sqlalchemy import BOOLEAN
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import DefaultClause
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types as sqltypes
-from sqlalchemy import UnicodeText
-from sqlalchemy import util
-from sqlalchemy.dialects.mysql import base as mysql
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_regex
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.util import u
+from sqlalchemy_1_3 import BOOLEAN
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import DefaultClause
+from sqlalchemy_1_3 import Enum
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import TIMESTAMP
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import types as sqltypes
+from sqlalchemy_1_3 import UnicodeText
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.dialects.mysql import base as mysql
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import eq_regex
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.util import u
 
 
 class TypeCompileTest(fixtures.TestBase, AssertsCompiledSQL):

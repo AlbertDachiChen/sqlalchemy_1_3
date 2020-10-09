@@ -1,54 +1,54 @@
-import sqlalchemy as sa
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import comparable_using
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import AttributeExtension
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import collections
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import comparable_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import EXT_CONTINUE
-from sqlalchemy.orm import foreign
-from sqlalchemy.orm import identity
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import joinedload_all
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import MapperExtension
-from sqlalchemy.orm import PropComparator
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import SessionExtension
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import not_in_
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.util.compat import pypy
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext.declarative import comparable_using
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import AttributeExtension
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import collections
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import comparable_property
+from sqlalchemy_1_3.orm import composite
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import defer
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import EXT_CONTINUE
+from sqlalchemy_1_3.orm import foreign
+from sqlalchemy_1_3.orm import identity
+from sqlalchemy_1_3.orm import instrumentation
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import joinedload_all
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import MapperExtension
+from sqlalchemy_1_3.orm import PropComparator
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import SessionExtension
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm import undefer
+from sqlalchemy_1_3.orm.collections import collection
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assertions
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import not_in_
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
+from sqlalchemy_1_3.util.compat import pypy
 from . import _fixtures
 from .test_options import PathTest as OptionsPathTest
 from .test_query import QueryTest
@@ -679,7 +679,7 @@ class DeprecatedMapperTest(_fixtures.FixtureTest, AssertsCompiledSQL):
             def method1(self):
                 return "method1"
 
-        from sqlalchemy.orm.properties import ColumnProperty
+        from sqlalchemy_1_3.orm.properties import ColumnProperty
 
         class UCComparator(ColumnProperty.Comparator):
             __hash__ = None
@@ -2167,7 +2167,7 @@ class InstrumentationTest(fixtures.ORMTest):
                 def base_remove(self, x):
                     return "base_remove"
 
-        from sqlalchemy.orm.collections import _instrument_class
+        from sqlalchemy_1_3.orm.collections import _instrument_class
 
         _instrument_class(Base)
 

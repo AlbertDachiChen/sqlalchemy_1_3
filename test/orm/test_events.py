@@ -1,39 +1,39 @@
-import sqlalchemy as sa
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import events
-from sqlalchemy.orm import EXT_SKIP
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import Mapper
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import query
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.mapper import _mapper_registry
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.mock import ANY
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import events
+from sqlalchemy_1_3.orm import EXT_SKIP
+from sqlalchemy_1_3.orm import instrumentation
+from sqlalchemy_1_3.orm import Mapper
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import query
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm.mapper import _mapper_registry
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.mock import ANY
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
 from test.orm import _fixtures
 
 
@@ -1470,7 +1470,7 @@ class SessionEventsTest(_RemoveListeners, _fixtures.FixtureTest):
         assert my_listener_two not in s2.dispatch.before_flush
 
     def test_scoped_session_invalid_callable(self):
-        from sqlalchemy.orm import scoped_session
+        from sqlalchemy_1_3.orm import scoped_session
 
         def my_listener_one(*arg, **kw):
             pass
@@ -1488,7 +1488,7 @@ class SessionEventsTest(_RemoveListeners, _fixtures.FixtureTest):
         )
 
     def test_scoped_session_invalid_class(self):
-        from sqlalchemy.orm import scoped_session
+        from sqlalchemy_1_3.orm import scoped_session
 
         def my_listener_one(*arg, **kw):
             pass
@@ -1510,7 +1510,7 @@ class SessionEventsTest(_RemoveListeners, _fixtures.FixtureTest):
         )
 
     def test_scoped_session_listen(self):
-        from sqlalchemy.orm import scoped_session
+        from sqlalchemy_1_3.orm import scoped_session
 
         def my_listener_one(*arg, **kw):
             pass

@@ -4,64 +4,64 @@ import decimal
 import re
 import uuid
 
-import sqlalchemy as sa
-from sqlalchemy import any_
-from sqlalchemy import ARRAY
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import DateTime
-from sqlalchemy import Enum
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import null
-from sqlalchemy import Numeric
-from sqlalchemy import REAL
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types
-from sqlalchemy import Unicode
-from sqlalchemy import util
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects.postgresql import array
-from sqlalchemy.dialects.postgresql import base
-from sqlalchemy.dialects.postgresql import DATERANGE
-from sqlalchemy.dialects.postgresql import HSTORE
-from sqlalchemy.dialects.postgresql import hstore
-from sqlalchemy.dialects.postgresql import INT4RANGE
-from sqlalchemy.dialects.postgresql import INT8RANGE
-from sqlalchemy.dialects.postgresql import JSON
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.dialects.postgresql import NUMRANGE
-from sqlalchemy.dialects.postgresql import TSRANGE
-from sqlalchemy.dialects.postgresql import TSTZRANGE
-from sqlalchemy.exc import CompileError
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import Session
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import AssertsCompiledSQL
-from sqlalchemy.testing.assertions import AssertsExecutionResults
-from sqlalchemy.testing.assertions import ComparesTables
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import is_
-from sqlalchemy.testing.assertsql import RegexSQL
-from sqlalchemy.testing.suite import test_types as suite
-from sqlalchemy.testing.util import round_decimal
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import any_
+from sqlalchemy_1_3 import ARRAY
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import Enum
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import null
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import REAL
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import types
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.dialects import postgresql
+from sqlalchemy_1_3.dialects.postgresql import array
+from sqlalchemy_1_3.dialects.postgresql import base
+from sqlalchemy_1_3.dialects.postgresql import DATERANGE
+from sqlalchemy_1_3.dialects.postgresql import HSTORE
+from sqlalchemy_1_3.dialects.postgresql import hstore
+from sqlalchemy_1_3.dialects.postgresql import INT4RANGE
+from sqlalchemy_1_3.dialects.postgresql import INT8RANGE
+from sqlalchemy_1_3.dialects.postgresql import JSON
+from sqlalchemy_1_3.dialects.postgresql import JSONB
+from sqlalchemy_1_3.dialects.postgresql import NUMRANGE
+from sqlalchemy_1_3.dialects.postgresql import TSRANGE
+from sqlalchemy_1_3.dialects.postgresql import TSTZRANGE
+from sqlalchemy_1_3.exc import CompileError
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.sql import sqltypes
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertions import assert_raises
+from sqlalchemy_1_3.testing.assertions import assert_raises_message
+from sqlalchemy_1_3.testing.assertions import AssertsCompiledSQL
+from sqlalchemy_1_3.testing.assertions import AssertsExecutionResults
+from sqlalchemy_1_3.testing.assertions import ComparesTables
+from sqlalchemy_1_3.testing.assertions import eq_
+from sqlalchemy_1_3.testing.assertions import is_
+from sqlalchemy_1_3.testing.assertsql import RegexSQL
+from sqlalchemy_1_3.testing.suite import test_types as suite
+from sqlalchemy_1_3.testing.util import round_decimal
 
 
 tztable = notztable = metadata = table = None
@@ -864,7 +864,7 @@ class NumericInterpretationTest(fixtures.TestBase):
     __backend__ = True
 
     def test_numeric_codes(self):
-        from sqlalchemy.dialects.postgresql import (
+        from sqlalchemy_1_3.dialects.postgresql import (
             pg8000,
             pygresql,
             psycopg2,
@@ -1318,7 +1318,7 @@ class ArrayTest(AssertsCompiledSQL, fixtures.TestBase):
         is_(expr.type.item_type.__class__, Integer)
 
     def test_array_agg_specific(self):
-        from sqlalchemy.dialects.postgresql import array_agg
+        from sqlalchemy_1_3.dialects.postgresql import array_agg
 
         expr = array_agg(column("q", Integer))
         is_(expr.type.__class__, postgresql.ARRAY)
@@ -2280,7 +2280,7 @@ class HStoreTest(AssertsCompiledSQL, fixtures.TestBase):
         eq_(proc('"\\\\\\"a"=>"\\\\\\"1"'), {'\\"a': '\\"1'})
 
     def test_bind_serialize_psycopg2(self):
-        from sqlalchemy.dialects.postgresql import psycopg2
+        from sqlalchemy_1_3.dialects.postgresql import psycopg2
 
         dialect = psycopg2.PGDialect_psycopg2()
         dialect._has_native_hstore = True
@@ -2296,7 +2296,7 @@ class HStoreTest(AssertsCompiledSQL, fixtures.TestBase):
         )
 
     def test_result_deserialize_psycopg2(self):
-        from sqlalchemy.dialects.postgresql import psycopg2
+        from sqlalchemy_1_3.dialects.postgresql import psycopg2
 
         dialect = psycopg2.PGDialect_psycopg2()
         dialect._has_native_hstore = True
@@ -2652,7 +2652,7 @@ class HStoreRoundTripTest(fixtures.TablesTest):
         self._assert_data([{r"key \"foo\"": r'value \"bar"\ xyz'}])
 
     def test_orm_round_trip(self):
-        from sqlalchemy import orm
+        from sqlalchemy_1_3 import orm
 
         class Data(object):
             def __init__(self, name, data):
@@ -2857,7 +2857,7 @@ class _RangeTypeRoundTrip(fixtures.TablesTest):
         eq_(str(self._col_type()), self._col_str)
 
     def test_reflect(self):
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         insp = inspect(testing.db)
         cols = insp.get_columns("data_table")

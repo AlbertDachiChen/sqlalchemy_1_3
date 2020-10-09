@@ -1,21 +1,21 @@
 """test the inspection registry system."""
 
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.attributes import instance_state
-from sqlalchemy.orm.attributes import NO_VALUE
-from sqlalchemy.orm.base import InspectionAttr
-from sqlalchemy.orm.util import identity_key
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import is_
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm.attributes import instance_state
+from sqlalchemy_1_3.orm.attributes import NO_VALUE
+from sqlalchemy_1_3.orm.base import InspectionAttr
+from sqlalchemy_1_3.orm.util import identity_key
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import is_
 from test.orm import _fixtures
 
 
@@ -64,7 +64,7 @@ class TestORMInspection(_fixtures.FixtureTest):
         assert not insp.is_aliased_class
 
     def test_mapper_selectable_fixed(self):
-        from sqlalchemy.orm import mapper
+        from sqlalchemy_1_3.orm import mapper
 
         class Foo(object):
             pass
@@ -232,19 +232,19 @@ class TestORMInspection(_fixtures.FixtureTest):
         assert hasattr(prop, "expression")
 
     def test_extension_types(self):
-        from sqlalchemy.ext.associationproxy import (
+        from sqlalchemy_1_3.ext.associationproxy import (
             association_proxy,
             ASSOCIATION_PROXY,
         )
-        from sqlalchemy.ext.hybrid import (
+        from sqlalchemy_1_3.ext.hybrid import (
             hybrid_property,
             hybrid_method,
             HYBRID_PROPERTY,
             HYBRID_METHOD,
         )
-        from sqlalchemy import Table, MetaData, Integer, Column
-        from sqlalchemy.orm import mapper
-        from sqlalchemy.orm.interfaces import NOT_EXTENSION
+        from sqlalchemy_1_3 import Table, MetaData, Integer, Column
+        from sqlalchemy_1_3.orm import mapper
+        from sqlalchemy_1_3.orm.interfaces import NOT_EXTENSION
 
         class SomeClass(self.classes.User):
             some_assoc = association_proxy("addresses", "email_address")
@@ -408,8 +408,8 @@ class TestORMInspection(_fixtures.FixtureTest):
             __foo__ = "bar"
             __bat__ = Thing()
 
-        from sqlalchemy.orm import mapper, column_property
-        from sqlalchemy.ext.hybrid import hybrid_property
+        from sqlalchemy_1_3.orm import mapper, column_property
+        from sqlalchemy_1_3.ext.hybrid import hybrid_property
 
         m = mapper(AnonClass, self.tables.users)
 
@@ -445,7 +445,7 @@ class TestORMInspection(_fixtures.FixtureTest):
 
     def _ordered_name_fixture(self, glbls, clsname, base, supercls):
         import random
-        from sqlalchemy import Integer, Column
+        from sqlalchemy_1_3 import Integer, Column
         import textwrap
 
         names = self._random_names()
@@ -490,9 +490,9 @@ class TestORMInspection(_fixtures.FixtureTest):
             glbls["MyOtherClass"] = MyOtherClass
         code = """
 
-from sqlalchemy import Column, Integer, ForeignKey
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy_1_3 import Column, Integer, ForeignKey
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.ext.hybrid import hybrid_property
 
 class %s(SuperCls):
     %s
@@ -511,7 +511,7 @@ class %s(SuperCls):
 
     @testing.requires.pep520
     def test_all_orm_descriptors_pep520_noinh(self):
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         Base = declarative_base()
 
@@ -524,7 +524,7 @@ class %s(SuperCls):
 
     @testing.requires.pep520
     def test_all_orm_descriptors_pep520_onelevel_inh(self):
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         Base = declarative_base()
 
@@ -548,8 +548,8 @@ class %s(SuperCls):
         class MyClass(object):
             pass
 
-        from sqlalchemy.orm import mapper
-        from sqlalchemy import Table, MetaData, Column, Integer
+        from sqlalchemy_1_3.orm import mapper
+        from sqlalchemy_1_3 import Table, MetaData, Column, Integer
 
         names = self._random_names()
 

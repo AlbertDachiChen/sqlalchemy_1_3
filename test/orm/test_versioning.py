@@ -2,34 +2,34 @@ import contextlib
 import datetime
 import uuid
 
-import sqlalchemy as sa
-from sqlalchemy import Date
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import orm
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy import util
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.mock import patch
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import orm
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import config
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.mock import patch
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 def make_uuid():
@@ -514,7 +514,7 @@ class VersioningTest(fixtures.MappedTest):
 
         with patch.object(
             config.db.dialect, "supports_sane_multi_rowcount", False
-        ), patch("sqlalchemy.engine.result.ResultProxy.rowcount", rowcount):
+        ), patch("sqlalchemy_1_3.engine.result.ResultProxy.rowcount", rowcount):
 
             Foo = self.classes.Foo
             s1 = self._fixture()
@@ -1391,8 +1391,8 @@ class ServerVersioningTest(fixtures.MappedTest):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.sql import ColumnElement
-        from sqlalchemy.ext.compiler import compiles
+        from sqlalchemy_1_3.sql import ColumnElement
+        from sqlalchemy_1_3.ext.compiler import compiles
         import itertools
 
         counter = itertools.count(1)

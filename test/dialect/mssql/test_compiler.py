@@ -1,37 +1,37 @@
 # -*- encoding: utf-8
-from sqlalchemy import Column
-from sqlalchemy import Computed
-from sqlalchemy import delete
-from sqlalchemy import extract
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import union
-from sqlalchemy import UniqueConstraint
-from sqlalchemy import update
-from sqlalchemy.dialects import mssql
-from sqlalchemy.dialects.mssql import base as mssql_base
-from sqlalchemy.dialects.mssql import mxodbc
-from sqlalchemy.dialects.mssql.base import try_cast
-from sqlalchemy.sql import column
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import table
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import delete
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import insert
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import PrimaryKeyConstraint
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3 import update
+from sqlalchemy_1_3.dialects import mssql
+from sqlalchemy_1_3.dialects.mssql import base as mssql_base
+from sqlalchemy_1_3.dialects.mssql import mxodbc
+from sqlalchemy_1_3.dialects.mssql.base import try_cast
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import quoted_name
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
 
 
 class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -321,7 +321,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
     def test_strict_binds(self):
         """test the 'strict' compiler binds."""
 
-        from sqlalchemy.dialects.mssql.base import MSSQLStrictCompiler
+        from sqlalchemy_1_3.dialects.mssql.base import MSSQLStrictCompiler
 
         mxodbc_dialect = mxodbc.dialect()
         mxodbc_dialect.statement_compiler = MSSQLStrictCompiler

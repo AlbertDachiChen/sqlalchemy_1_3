@@ -54,7 +54,7 @@ A quick check to verify that we are on at least **version 1.3** of SQLAlchemy:
 
 .. sourcecode:: pycon+sql
 
-    >>> import sqlalchemy
+    >>> import sqlalchemy_1_3
     >>> sqlalchemy.__version__  # doctest: +SKIP
     1.3.0
 
@@ -67,7 +67,7 @@ anywhere. To connect we use :func:`~sqlalchemy.create_engine`:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import create_engine
+    >>> from sqlalchemy_1_3 import create_engine
     >>> engine = create_engine('sqlite:///:memory:', echo=True)
 
 The ``echo`` flag is a shortcut to setting up SQLAlchemy logging, which is
@@ -123,7 +123,7 @@ addresses" for each row in the "users" table:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+    >>> from sqlalchemy_1_3 import Table, Column, Integer, String, MetaData, ForeignKey
     >>> metadata = MetaData()
     >>> users = Table('users', metadata,
     ...     Column('id', Integer, primary_key=True),
@@ -255,7 +255,7 @@ connection, we will use the :meth:`.Engine.connect` method::
 
     >>> conn = engine.connect()
     >>> conn
-    <sqlalchemy.engine.base.Connection object at 0x...>
+    <sqlalchemy_1_3.engine.base.Connection object at 0x...>
 
 The :class:`~sqlalchemy.engine.Connection` object represents an actively
 checked out DBAPI connection resource. Lets feed it our
@@ -329,7 +329,7 @@ and use it in the "normal" way:
     {opensql}INSERT INTO users (id, name, fullname) VALUES (?, ?, ?)
     (2, 'wendy', 'Wendy Williams')
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop} <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 Above, because we specified all three columns in the ``execute()`` method,
 the compiled :class:`_expression.Insert` included all three
@@ -353,7 +353,7 @@ inserted, as we do here to add some email addresses:
     {opensql}INSERT INTO addresses (user_id, email_address) VALUES (?, ?)
     ((1, 'jack@yahoo.com'), (1, 'jack@msn.com'), (2, 'www@www.org'), (2, 'wendy@aol.com'))
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop} <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 Above, we again relied upon SQLite's automatic generation of primary key
 identifiers for each ``addresses`` row.
@@ -381,7 +381,7 @@ statements is the :func:`_expression.select` function:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import select
+    >>> from sqlalchemy_1_3.sql import select
     >>> s = select([users])
     >>> result = conn.execute(s)
     {opensql}SELECT users.id, users.name, users.fullname
@@ -533,7 +533,7 @@ a WHERE clause. So lets see exactly what that expression is doing:
 .. sourcecode:: pycon+sql
 
     >>> users.c.id == addresses.c.user_id
-    <sqlalchemy.sql.elements.BinaryExpression object at 0x...>
+    <sqlalchemy_1_3.sql.elements.BinaryExpression object at 0x...>
 
 Wow, surprise ! This is neither a ``True`` nor a ``False``. Well what is it ?
 
@@ -681,7 +681,7 @@ a :meth:`~.ColumnOperators.like`):
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import and_, or_, not_
+    >>> from sqlalchemy_1_3.sql import and_, or_, not_
     >>> print(and_(
     ...         users.c.name.like('j%'),
     ...         users.c.id == addresses.c.user_id,
@@ -796,7 +796,7 @@ unchanged.  Below, we create a :func:`_expression.text` object and execute it:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import text
+    >>> from sqlalchemy_1_3.sql import text
     >>> s = text(
     ...     "SELECT users.fullname || ', ' || addresses.email_address AS title "
     ...         "FROM users, addresses "
@@ -995,8 +995,8 @@ be quoted:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import select, and_, text, String
-    >>> from sqlalchemy.sql import table, literal_column
+    >>> from sqlalchemy_1_3 import select, and_, text, String
+    >>> from sqlalchemy_1_3.sql import table, literal_column
     >>> s = select([
     ...    literal_column("users.fullname", String) +
     ...    ', ' +
@@ -1036,7 +1036,7 @@ are rendered fully:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import func
+    >>> from sqlalchemy_1_3 import func
     >>> stmt = select([
     ...         addresses.c.user_id,
     ...         func.count(addresses.c.id).label('num_addresses')]).\
@@ -1053,7 +1053,7 @@ name:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import func, desc
+    >>> from sqlalchemy_1_3 import func, desc
     >>> stmt = select([
     ...         addresses.c.user_id,
     ...         func.count(addresses.c.id).label('num_addresses')]).\
@@ -1241,7 +1241,7 @@ would be using ``OracleDialect``) to use Oracle-specific SQL:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.dialects.oracle import dialect as OracleDialect
+    >>> from sqlalchemy_1_3.dialects.oracle import dialect as OracleDialect
     >>> print(s.compile(dialect=OracleDialect(use_ansi=False)))
     SELECT users.fullname
     FROM users, addresses
@@ -1345,7 +1345,7 @@ at execution time, as here where it converts to positional for SQLite:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import bindparam
+    >>> from sqlalchemy_1_3.sql import bindparam
     >>> s = users.select(users.c.name == bindparam('username'))
     {sql}>>> conn.execute(s, username='wendy').fetchall()
     SELECT users.id, users.name, users.fullname
@@ -1409,7 +1409,7 @@ generates functions using attribute access:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import func
+    >>> from sqlalchemy_1_3.sql import func
     >>> print(func.now())
     now()
 
@@ -1473,7 +1473,7 @@ well as bind parameters:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import column
+    >>> from sqlalchemy_1_3.sql import column
     >>> calculate = select([column('q'), column('z'), column('r')]).\
     ...        select_from(
     ...             func.calculate(
@@ -1573,7 +1573,7 @@ object as arguments:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import cast
+    >>> from sqlalchemy_1_3 import cast
     >>> s = select([cast(users.c.id, String)])
     >>> conn.execute(s).fetchall()
     {opensql}SELECT CAST(users.id AS VARCHAR) AS anon_1
@@ -1611,9 +1611,9 @@ string into one of MySQL's JSON functions:
 .. sourcecode:: pycon+sql
 
     >>> import json
-    >>> from sqlalchemy import JSON
-    >>> from sqlalchemy import type_coerce
-    >>> from sqlalchemy.dialects import mysql
+    >>> from sqlalchemy_1_3 import JSON
+    >>> from sqlalchemy_1_3 import type_coerce
+    >>> from sqlalchemy_1_3.dialects import mysql
     >>> s = select([
     ... type_coerce(
     ...        {'some_key': {'foo': 'bar'}}, JSON
@@ -1638,7 +1638,7 @@ module level functions :func:`_expression.union` and
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import union
+    >>> from sqlalchemy_1_3.sql import union
     >>> u = union(
     ...     addresses.select().
     ...             where(addresses.c.email_address == 'foo@bar.com'),
@@ -1664,7 +1664,7 @@ Also available, though not supported on all databases, are
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.sql import except_
+    >>> from sqlalchemy_1_3.sql import except_
     >>> u = except_(
     ...    addresses.select().
     ...             where(addresses.c.email_address.like('%@%.com')),
@@ -1917,7 +1917,7 @@ just to the "books" table but also the "people" table, correlating
 to the left side of the JOIN.   SQLAlchemy Core supports a statement
 like the above using the :meth:`_expression.Select.lateral` method as follows::
 
-    >>> from sqlalchemy import table, column, select, true
+    >>> from sqlalchemy_1_3 import table, column, select, true
     >>> people = table('people', column('people_id'), column('age'), column('name'))
     >>> books = table('books', column('book_id'), column('owner_id'))
     >>> subq = select([books.c.book_id]).\
@@ -2082,7 +2082,7 @@ as a value:
     {opensql}UPDATE users SET fullname=(? || users.name)
     ('Fullname: ',)
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop} <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 When using :meth:`_expression.TableClause.insert` or :meth:`_expression.TableClause.update`
 in an "execute many" context, we may also want to specify named
@@ -2111,7 +2111,7 @@ as in the example below:
     {opensql}INSERT INTO users (id, name) VALUES (?, (? || ?))
     ((4, 'name1', ' .. name'), (5, 'name2', ' .. name'), (6, 'name3', ' .. name'))
     COMMIT
-    <sqlalchemy.engine.result.ResultProxy object at 0x...>
+    <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 An UPDATE statement is emitted using the :meth:`_expression.TableClause.update` construct.  This
 works much like an INSERT, except there is an additional WHERE clause
@@ -2127,7 +2127,7 @@ that can be specified:
     {opensql}UPDATE users SET name=? WHERE users.name = ?
     ('ed', 'jack')
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop} <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 When using :meth:`_expression.TableClause.update` in an "executemany" context,
 we may wish to also use explicitly named bound parameters in the
@@ -2147,7 +2147,7 @@ used to achieve this:
     {opensql}UPDATE users SET name=? WHERE users.name = ?
     (('ed', 'jack'), ('mary', 'wendy'), ('jake', 'jim'))
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop} <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 
 Correlated Updates
@@ -2168,7 +2168,7 @@ table, or the same table:
         LIMIT ? OFFSET ?)
     (1, 0)
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop} <sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 .. _multi_table_updates:
 
@@ -2284,13 +2284,13 @@ Finally, a delete.  This is accomplished easily enough using the
     {opensql}DELETE FROM addresses
     ()
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop}<sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
     >>> conn.execute(users.delete().where(users.c.name > 'm'))
     {opensql}DELETE FROM users WHERE users.name > ?
     ('m',)
     COMMIT
-    {stop}<sqlalchemy.engine.result.ResultProxy object at 0x...>
+    {stop}<sqlalchemy_1_3.engine.result.ResultProxy object at 0x...>
 
 .. _multi_table_deletes:
 
@@ -2353,5 +2353,3 @@ Engine Reference: :doc:`/core/engines`
 Connection Reference: :ref:`connections_toplevel`
 
 Types Reference: :ref:`types_toplevel`
-
-

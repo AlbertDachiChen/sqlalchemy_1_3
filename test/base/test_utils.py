@@ -4,29 +4,29 @@ import copy
 import datetime
 import inspect
 
-from sqlalchemy import exc
-from sqlalchemy import sql
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.sql import column
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fails_if
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.util import classproperty
-from sqlalchemy.util import compat
-from sqlalchemy.util import get_callable_argspec
-from sqlalchemy.util import langhelpers
-from sqlalchemy.util import timezone
-from sqlalchemy.util import WeakSequence
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fails_if
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing.util import gc_collect
+from sqlalchemy_1_3.testing.util import picklers
+from sqlalchemy_1_3.util import classproperty
+from sqlalchemy_1_3.util import compat
+from sqlalchemy_1_3.util import get_callable_argspec
+from sqlalchemy_1_3.util import langhelpers
+from sqlalchemy_1_3.util import timezone
+from sqlalchemy_1_3.util import WeakSequence
 
 
 class _KeyedTupleTest(object):
@@ -1569,7 +1569,7 @@ class PublicFactoryTest(fixtures.TestBase):
         eq_(foob(3, 4).value, 7)
         eq_(foob(x=3, y=4).value, 7)
         eq_(foob.__doc__, "do the foobar")
-        eq_(foob.__module__, "sqlalchemy.sql.elements")
+        eq_(foob.__module__, "sqlalchemy_1_3.sql.elements")
         assert Thingy.foobar.__doc__.startswith("This function is mirrored;")
 
     def test_constructor(self):
@@ -1578,7 +1578,7 @@ class PublicFactoryTest(fixtures.TestBase):
         eq_(foob(7).value, 7)
         eq_(foob(value=7).value, 7)
         eq_(foob.__doc__, "make a thingy")
-        eq_(foob.__module__, "sqlalchemy.sql.elements")
+        eq_(foob.__module__, "sqlalchemy_1_3.sql.elements")
         assert Thingy.__init__.__doc__.startswith(
             "Construct a new :class:`.Thingy` object."
         )
@@ -2860,5 +2860,5 @@ class TimezoneTest(fixtures.TestBase):
     def test_repr_py2k(self):
         eq_(
             repr(timezone(datetime.timedelta(hours=5))),
-            "sqlalchemy.util.timezone(%r)" % (datetime.timedelta(hours=5)),
+            "sqlalchemy_1_3.util.timezone(%r)" % (datetime.timedelta(hours=5)),
         )

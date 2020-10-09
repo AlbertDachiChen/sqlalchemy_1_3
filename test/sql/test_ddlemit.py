@@ -1,14 +1,14 @@
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import Sequence
-from sqlalchemy import Table
-from sqlalchemy.sql.ddl import SchemaDropper
-from sqlalchemy.sql.ddl import SchemaGenerator
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.mock import Mock
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3.sql.ddl import SchemaDropper
+from sqlalchemy_1_3.sql.ddl import SchemaGenerator
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.mock import Mock
 
 
 class EmitDDLTest(fixtures.TestBase):

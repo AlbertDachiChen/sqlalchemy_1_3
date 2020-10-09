@@ -1,23 +1,23 @@
 #! coding:utf-8
 
-from sqlalchemy import and_
-from sqlalchemy import delete
-from sqlalchemy import exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.dialects import mysql
-from sqlalchemy.engine import default
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import delete
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import exists
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.dialects import mysql
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class _DeleteTestBase(object):

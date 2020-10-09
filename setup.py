@@ -22,15 +22,15 @@ cpython = platform.python_implementation() == "CPython"
 
 ext_modules = [
     Extension(
-        "sqlalchemy.cprocessors",
-        sources=["lib/sqlalchemy/cextension/processors.c"],
+        "sqlalchemy_1_3.cprocessors",
+        sources=["lib/sqlalchemy_1_3/cextension/processors.c"],
     ),
     Extension(
-        "sqlalchemy.cresultproxy",
-        sources=["lib/sqlalchemy/cextension/resultproxy.c"],
+        "sqlalchemy_1_3.cresultproxy",
+        sources=["lib/sqlalchemy_1_3/cextension/resultproxy.c"],
     ),
     Extension(
-        "sqlalchemy.cutils", sources=["lib/sqlalchemy/cextension/utils.c"]
+        "sqlalchemy_1_3.cutils", sources=["lib/sqlalchemy_1_3/cextension/utils.c"]
     ),
 ]
 
@@ -123,7 +123,7 @@ def status_msgs(*msgs):
 
 
 with open(
-    os.path.join(os.path.dirname(__file__), "lib", "sqlalchemy", "__init__.py")
+    os.path.join(os.path.dirname(__file__), "lib", "sqlalchemy_1_3", "__init__.py")
 ) as v_file:
     VERSION = (
         re.compile(r""".*__version__ = ["'](.*?)['"]""", re.S)
@@ -143,7 +143,7 @@ def run_setup(with_cext):
         kwargs["ext_modules"] = []
 
     setup(
-        name="SQLAlchemy",
+        name="SQLAlchemy_1_3",
         version=VERSION,
         description="Database Abstraction Library",
         author="Mike Bayer",

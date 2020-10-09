@@ -1,23 +1,23 @@
-import sqlalchemy as tsa
-from sqlalchemy import create_engine
-from sqlalchemy import engine_from_config
-from sqlalchemy import exc
-from sqlalchemy import pool
-from sqlalchemy import testing
-from sqlalchemy.dialects import plugins
-from sqlalchemy.dialects import registry
-from sqlalchemy.engine.default import DefaultDialect
-import sqlalchemy.engine.url as url
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import MagicMock
-from sqlalchemy.testing.mock import Mock
+import sqlalchemy_1_3 as tsa
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import engine_from_config
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import pool
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.dialects import plugins
+from sqlalchemy_1_3.dialects import registry
+from sqlalchemy_1_3.engine.default import DefaultDialect
+import sqlalchemy_1_3.engine.url as url
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import MagicMock
+from sqlalchemy_1_3.testing.mock import Mock
 
 
 dialect = None
@@ -198,7 +198,7 @@ class DialectImportTest(fixtures.TestBase):
             "mssql",
         ):
             exec(
-                "from sqlalchemy.dialects import %s\ndialect = "
+                "from sqlalchemy_1_3.dialects import %s\ndialect = "
                 "%s.dialect()" % (name, name),
                 globals(),
             )
@@ -265,7 +265,7 @@ class CreateEngineTest(fixtures.TestBase):
             eq_(e.pool._reset_on_return, expected)
 
     def test_engine_from_config_custom(self):
-        from sqlalchemy import util
+        from sqlalchemy_1_3 import util
 
         tokens = __name__.split(".")
 
@@ -495,7 +495,7 @@ class TestRegNewDBAPI(fixtures.TestBase):
 
         registry.register("wrapperdialect", __name__, "WrapperFactory")
 
-        from sqlalchemy.dialects import sqlite
+        from sqlalchemy_1_3.dialects import sqlite
 
         e = create_engine("wrapperdialect://")
 
@@ -512,7 +512,7 @@ class TestRegNewDBAPI(fixtures.TestBase):
 
     @testing.requires.sqlite
     def test_plugin_url_registration(self):
-        from sqlalchemy.dialects import sqlite
+        from sqlalchemy_1_3.dialects import sqlite
 
         global MyEnginePlugin
 
@@ -560,7 +560,7 @@ class TestRegNewDBAPI(fixtures.TestBase):
 
     @testing.requires.sqlite
     def test_plugin_multiple_url_registration(self):
-        from sqlalchemy.dialects import sqlite
+        from sqlalchemy_1_3.dialects import sqlite
 
         global MyEnginePlugin1
         global MyEnginePlugin2
@@ -615,7 +615,7 @@ class TestRegNewDBAPI(fixtures.TestBase):
 
     @testing.requires.sqlite
     def test_plugin_arg_registration(self):
-        from sqlalchemy.dialects import sqlite
+        from sqlalchemy_1_3.dialects import sqlite
 
         global MyEnginePlugin
 

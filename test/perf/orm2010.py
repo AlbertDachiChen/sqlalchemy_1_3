@@ -3,16 +3,16 @@ import os
 import random
 import warnings
 
-from sqlalchemy import __version__
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import Numeric
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from sqlalchemy_1_3 import __version__
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
 
 
 warnings.filterwarnings("ignore", r".*Decimal objects natively")  # noqa

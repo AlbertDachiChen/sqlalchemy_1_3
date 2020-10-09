@@ -2,47 +2,47 @@ from copy import deepcopy
 import datetime
 import decimal
 
-from sqlalchemy import ARRAY
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import extract
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import types as sqltypes
-from sqlalchemy import util
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import oracle
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects import sqlite
-from sqlalchemy.sql import column
-from sqlalchemy.sql import functions
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import table
-from sqlalchemy.sql.compiler import BIND_TEMPLATES
-from sqlalchemy.sql.functions import FunctionElement
-from sqlalchemy.sql.functions import GenericFunction
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.engines import all_dialects
+from sqlalchemy_1_3 import ARRAY
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import types as sqltypes
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.dialects import mysql
+from sqlalchemy_1_3.dialects import oracle
+from sqlalchemy_1_3.dialects import postgresql
+from sqlalchemy_1_3.dialects import sqlite
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import functions
+from sqlalchemy_1_3.sql import quoted_name
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql.compiler import BIND_TEMPLATES
+from sqlalchemy_1_3.sql.functions import FunctionElement
+from sqlalchemy_1_3.sql.functions import GenericFunction
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.assertions import expect_warnings
+from sqlalchemy_1_3.testing.engines import all_dialects
 
 
 table1 = table(
@@ -775,7 +775,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
 
         fn = func.foobar("x", "y", "q", "p", "r").as_comparison(2, 5)
 
-        from sqlalchemy.sql import annotation
+        from sqlalchemy_1_3.sql import annotation
 
         fn_annotated = annotation._deep_annotate(fn, {"token": "yes"})
 
@@ -800,7 +800,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
             checkparams={"some_comparison_1": "q"},
         )
 
-        from sqlalchemy.sql import visitors
+        from sqlalchemy_1_3.sql import visitors
 
         fn_2 = visitors.cloned_traverse(fn, {}, {})
         fn_2.right = literal_column("ABC")
@@ -847,7 +847,7 @@ class ReturnTypeTest(AssertsCompiledSQL, fixtures.TestBase):
         is_(expr.type.item_type._type_affinity, Integer)
 
     def test_array_agg_array_literal_implicit_type(self):
-        from sqlalchemy.dialects.postgresql import array, ARRAY as PG_ARRAY
+        from sqlalchemy_1_3.dialects.postgresql import array, ARRAY as PG_ARRAY
 
         expr = array([column("data", Integer), column("d2", Integer)])
 
@@ -863,7 +863,7 @@ class ReturnTypeTest(AssertsCompiledSQL, fixtures.TestBase):
         )
 
     def test_array_agg_array_literal_explicit_type(self):
-        from sqlalchemy.dialects.postgresql import array
+        from sqlalchemy_1_3.dialects.postgresql import array
 
         expr = array([column("data", Integer), column("d2", Integer)])
 
@@ -914,8 +914,8 @@ class ExecuteTest(fixtures.TestBase):
         pass
 
     def test_conn_execute(self):
-        from sqlalchemy.sql.expression import FunctionElement
-        from sqlalchemy.ext.compiler import compiles
+        from sqlalchemy_1_3.sql.expression import FunctionElement
+        from sqlalchemy_1_3.ext.compiler import compiles
 
         class myfunc(FunctionElement):
             type = Date()

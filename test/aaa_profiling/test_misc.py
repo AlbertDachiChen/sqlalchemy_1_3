@@ -1,7 +1,7 @@
-from sqlalchemy import Enum
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
-from sqlalchemy.util import classproperty
+from sqlalchemy_1_3 import Enum
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import profiling
+from sqlalchemy_1_3.util import classproperty
 
 
 class EnumTest(fixtures.TestBase):

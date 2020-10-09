@@ -2,38 +2,38 @@
 
 import datetime
 
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import Time
-from sqlalchemy import tuple_
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertsql import CursorSQL
-from sqlalchemy.testing.assertsql import DialectSQL
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import Time
+from sqlalchemy_1_3 import tuple_
+from sqlalchemy_1_3.dialects import postgresql
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertsql import CursorSQL
+from sqlalchemy_1_3.testing.assertsql import DialectSQL
 
 
 matchtable = cattable = None
@@ -924,7 +924,7 @@ class ExtractTest(fixtures.TablesTest):
 
     @classmethod
     def setup_bind(cls):
-        from sqlalchemy import event
+        from sqlalchemy_1_3 import event
 
         eng = engines.testing_engine()
 

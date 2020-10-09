@@ -1,41 +1,41 @@
-import sqlalchemy as sa
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import make_transient
-from sqlalchemy.orm import make_transient_to_detached
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import object_session
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import was_deleted
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import pickleable
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.util import pickle
-from sqlalchemy.util.compat import inspect_getfullargspec
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import close_all_sessions
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import make_transient
+from sqlalchemy_1_3.orm import make_transient_to_detached
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import object_session
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm import was_deleted
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assertions
+from sqlalchemy_1_3.testing import config
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing import pickleable
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
+from sqlalchemy_1_3.util import pickle
+from sqlalchemy_1_3.util.compat import inspect_getfullargspec
 from test.orm import _fixtures
 
 
@@ -1642,7 +1642,7 @@ class DisposedStates(fixtures.MappedTest):
         mapper(T, cls.tables.t1)
 
     def teardown(self):
-        from sqlalchemy.orm.session import _sessions
+        from sqlalchemy_1_3.orm.session import _sessions
 
         _sessions.clear()
         super(DisposedStates, self).teardown()
@@ -1901,14 +1901,14 @@ class SessionInterface(fixtures.TestBase):
             )
 
             with mock.patch(
-                "sqlalchemy.orm.session.loading.load_on_ident"
+                "sqlalchemy_1_3.orm.session.loading.load_on_ident"
             ) as load_on_ident:
                 s.refresh(m1, with_for_update={"read": True})
                 s.refresh(m1, with_for_update=True)
                 s.refresh(m1, with_for_update=False)
                 s.refresh(m1)
 
-            from sqlalchemy.orm.query import LockmodeArg
+            from sqlalchemy_1_3.orm.query import LockmodeArg
 
             eq_(
                 [

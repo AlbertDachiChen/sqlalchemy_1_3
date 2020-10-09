@@ -1,52 +1,52 @@
 # coding: utf-8
 
-from sqlalchemy import and_
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import Computed
-from sqlalchemy import delete
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import null
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import types as sqltypes
-from sqlalchemy import update
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects.postgresql import aggregate_order_by
-from sqlalchemy.dialects.postgresql import ARRAY as PG_ARRAY
-from sqlalchemy.dialects.postgresql import array
-from sqlalchemy.dialects.postgresql import array_agg as pg_array_agg
-from sqlalchemy.dialects.postgresql import ExcludeConstraint
-from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy.dialects.postgresql import TSRANGE
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import Session
-from sqlalchemy.sql import column
-from sqlalchemy.sql import literal_column
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import AssertsCompiledSQL
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.assertions import is_
-from sqlalchemy.util import OrderedDict
-from sqlalchemy.util import u
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import delete
+from sqlalchemy_1_3 import Enum
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import null
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import types as sqltypes
+from sqlalchemy_1_3 import update
+from sqlalchemy_1_3.dialects import postgresql
+from sqlalchemy_1_3.dialects.postgresql import aggregate_order_by
+from sqlalchemy_1_3.dialects.postgresql import ARRAY as PG_ARRAY
+from sqlalchemy_1_3.dialects.postgresql import array
+from sqlalchemy_1_3.dialects.postgresql import array_agg as pg_array_agg
+from sqlalchemy_1_3.dialects.postgresql import ExcludeConstraint
+from sqlalchemy_1_3.dialects.postgresql import insert
+from sqlalchemy_1_3.dialects.postgresql import TSRANGE
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import literal_column
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertions import assert_raises
+from sqlalchemy_1_3.testing.assertions import assert_raises_message
+from sqlalchemy_1_3.testing.assertions import AssertsCompiledSQL
+from sqlalchemy_1_3.testing.assertions import expect_warnings
+from sqlalchemy_1_3.testing.assertions import is_
+from sqlalchemy_1_3.util import OrderedDict
+from sqlalchemy_1_3.util import u
 
 
 class SequenceTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -245,7 +245,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
         table = Table(
             "some_table", MetaData(), Column("q", e1), Column("p", e2)
         )
-        from sqlalchemy.schema import CreateTable
+        from sqlalchemy_1_3.schema import CreateTable
 
         self.assert_compile(
             CreateTable(table),

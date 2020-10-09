@@ -2,36 +2,36 @@
 
 import re
 
-from sqlalchemy import bindparam
-from sqlalchemy import Computed
-from sqlalchemy import create_engine
-from sqlalchemy import exc
-from sqlalchemy import Float
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import outparam
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy.dialects.oracle import base as oracle
-from sqlalchemy.dialects.oracle import cx_oracle
-from sqlalchemy.engine import url
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import u
-from sqlalchemy.util import ue
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import outparam
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import UnicodeText
+from sqlalchemy_1_3.dialects.oracle import base as oracle
+from sqlalchemy_1_3.dialects.oracle import cx_oracle
+from sqlalchemy_1_3.engine import url
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.util import u
+from sqlalchemy_1_3.util import ue
 
 
 class DialectTest(fixtures.TestBase):
@@ -46,7 +46,7 @@ class DialectTest(fixtures.TestBase):
 
     def test_minimum_version(self):
         with mock.patch(
-            "sqlalchemy.dialects.oracle.cx_oracle.OracleDialect_cx_oracle."
+            "sqlalchemy_1_3.dialects.oracle.cx_oracle.OracleDialect_cx_oracle."
             "_parse_cx_oracle_ver",
             lambda self, vers: (5, 1, 5),
         ):
@@ -58,7 +58,7 @@ class DialectTest(fixtures.TestBase):
             )
 
         with mock.patch(
-            "sqlalchemy.dialects.oracle.cx_oracle.OracleDialect_cx_oracle."
+            "sqlalchemy_1_3.dialects.oracle.cx_oracle.OracleDialect_cx_oracle."
             "_parse_cx_oracle_ver",
             lambda self, vers: (5, 3, 1),
         ):
@@ -480,7 +480,7 @@ class CompatFlagsTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_ident_length_in_13_is_30(self):
-        from sqlalchemy import __version__
+        from sqlalchemy_1_3 import __version__
 
         m = re.match(r"(\d+)\.(\d+)(?:\.(\d+))?", __version__)
         version = tuple(int(x) for x in m.group(1, 2, 3) if x is not None)

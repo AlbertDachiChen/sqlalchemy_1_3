@@ -1,20 +1,20 @@
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import lateral
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import true
-from sqlalchemy.engine import default
-from sqlalchemy.sql import func
-from sqlalchemy.sql import select
-from sqlalchemy.sql.selectable import Lateral
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import join
+from sqlalchemy_1_3 import lateral
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import table
+from sqlalchemy_1_3 import true
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.sql import func
+from sqlalchemy_1_3.sql import select
+from sqlalchemy_1_3.sql.selectable import Lateral
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import fixtures
 
 
 class LateralTest(fixtures.TablesTest, AssertsCompiledSQL):

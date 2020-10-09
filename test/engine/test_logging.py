@@ -1,23 +1,23 @@
 import logging.handlers
 
-import sqlalchemy as tsa
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import util
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_raises_return
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_regex
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.util import lazy_gc
+import sqlalchemy_1_3 as tsa
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assert_raises_return
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import eq_regex
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.util import lazy_gc
 
 
 class LogParamsTest(fixtures.TestBase):
@@ -34,12 +34,12 @@ class LogParamsTest(fixtures.TestBase):
             "create table if not exists foo (data string)"
         )
         self.buf = logging.handlers.BufferingHandler(100)
-        for log in [logging.getLogger("sqlalchemy.engine")]:
+        for log in [logging.getLogger("sqlalchemy_1_3.engine")]:
             log.addHandler(self.buf)
 
     def teardown(self):
         self.eng.execute("drop table if exists foo")
-        for log in [logging.getLogger("sqlalchemy.engine")]:
+        for log in [logging.getLogger("sqlalchemy_1_3.engine")]:
             log.removeHandler(self.buf)
 
     def test_log_large_list_of_dict(self):
@@ -285,7 +285,7 @@ class LogParamsTest(fixtures.TestBase):
         with self.no_param_engine.connect() as conn:
             assert_raises_message(
                 tsa.exc.StatementError,
-                r"\(sqlalchemy.exc.InvalidRequestError\) A value is required "
+                r"\(sqlalchemy_1_3.exc.InvalidRequestError\) A value is required "
                 r"for bind parameter 'the_data_2'\n"
                 r"\[SQL: SELECT foo.data \nFROM foo \nWHERE "
                 r"foo.data = \? OR foo.data = \?\]\n"
@@ -394,29 +394,29 @@ class LogParamsTest(fixtures.TestBase):
 
 class PoolLoggingTest(fixtures.TestBase):
     def setup(self):
-        self.existing_level = logging.getLogger("sqlalchemy.pool").level
+        self.existing_level = logging.getLogger("sqlalchemy_1_3.pool").level
 
         self.buf = logging.handlers.BufferingHandler(100)
-        for log in [logging.getLogger("sqlalchemy.pool")]:
+        for log in [logging.getLogger("sqlalchemy_1_3.pool")]:
             log.addHandler(self.buf)
 
     def teardown(self):
-        for log in [logging.getLogger("sqlalchemy.pool")]:
+        for log in [logging.getLogger("sqlalchemy_1_3.pool")]:
             log.removeHandler(self.buf)
-        logging.getLogger("sqlalchemy.pool").setLevel(self.existing_level)
+        logging.getLogger("sqlalchemy_1_3.pool").setLevel(self.existing_level)
 
     def _queuepool_echo_fixture(self):
         return tsa.pool.QueuePool(creator=mock.Mock(), echo="debug")
 
     def _queuepool_logging_fixture(self):
-        logging.getLogger("sqlalchemy.pool").setLevel(logging.DEBUG)
+        logging.getLogger("sqlalchemy_1_3.pool").setLevel(logging.DEBUG)
         return tsa.pool.QueuePool(creator=mock.Mock())
 
     def _stpool_echo_fixture(self):
         return tsa.pool.SingletonThreadPool(creator=mock.Mock(), echo="debug")
 
     def _stpool_logging_fixture(self):
-        logging.getLogger("sqlalchemy.pool").setLevel(logging.DEBUG)
+        logging.getLogger("sqlalchemy_1_3.pool").setLevel(logging.DEBUG)
         return tsa.pool.SingletonThreadPool(creator=mock.Mock())
 
     def _test_queuepool(self, q, dispose=True):
@@ -477,8 +477,8 @@ class LoggingNameTest(fixtures.TestBase):
         assert self.buf.buffer
         for name in [b.name for b in self.buf.buffer]:
             assert name in (
-                "sqlalchemy.engine.base.Engine.%s" % eng_name,
-                "sqlalchemy.pool.impl.%s.%s"
+                "sqlalchemy_1_3.engine.base.Engine.%s" % eng_name,
+                "sqlalchemy_1_3.pool.impl.%s.%s"
                 % (eng.pool.__class__.__name__, pool_name),
             )
 
@@ -487,8 +487,8 @@ class LoggingNameTest(fixtures.TestBase):
         assert self.buf.buffer
         for name in [b.name for b in self.buf.buffer]:
             assert name in (
-                "sqlalchemy.engine.base.Engine",
-                "sqlalchemy.pool.impl.%s" % eng.pool.__class__.__name__,
+                "sqlalchemy_1_3.engine.base.Engine",
+                "sqlalchemy_1_3.pool.impl.%s" % eng.pool.__class__.__name__,
             )
 
     def _named_engine(self, **kw):
@@ -507,15 +507,15 @@ class LoggingNameTest(fixtures.TestBase):
     def setup(self):
         self.buf = logging.handlers.BufferingHandler(100)
         for log in [
-            logging.getLogger("sqlalchemy.engine"),
-            logging.getLogger("sqlalchemy.pool"),
+            logging.getLogger("sqlalchemy_1_3.engine"),
+            logging.getLogger("sqlalchemy_1_3.pool"),
         ]:
             log.addHandler(self.buf)
 
     def teardown(self):
         for log in [
-            logging.getLogger("sqlalchemy.engine"),
-            logging.getLogger("sqlalchemy.pool"),
+            logging.getLogger("sqlalchemy_1_3.engine"),
+            logging.getLogger("sqlalchemy_1_3.pool"),
         ]:
             log.removeHandler(self.buf)
 
@@ -563,14 +563,14 @@ class EchoTest(fixtures.TestBase):
     __requires__ = ("ad_hoc_engines",)
 
     def setup(self):
-        self.level = logging.getLogger("sqlalchemy.engine").level
-        logging.getLogger("sqlalchemy.engine").setLevel(logging.WARN)
+        self.level = logging.getLogger("sqlalchemy_1_3.engine").level
+        logging.getLogger("sqlalchemy_1_3.engine").setLevel(logging.WARN)
         self.buf = logging.handlers.BufferingHandler(100)
-        logging.getLogger("sqlalchemy.engine").addHandler(self.buf)
+        logging.getLogger("sqlalchemy_1_3.engine").addHandler(self.buf)
 
     def teardown(self):
-        logging.getLogger("sqlalchemy.engine").removeHandler(self.buf)
-        logging.getLogger("sqlalchemy.engine").setLevel(self.level)
+        logging.getLogger("sqlalchemy_1_3.engine").removeHandler(self.buf)
+        logging.getLogger("sqlalchemy_1_3.engine").setLevel(self.level)
 
     def _testing_engine(self):
         e = engines.testing_engine()

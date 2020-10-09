@@ -1,34 +1,34 @@
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext import declarative as decl
-from sqlalchemy.ext.declarative import AbstractConcreteBase
-from sqlalchemy.ext.declarative import ConcreteBase
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.ext.declarative import has_inherited_table
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import polymorphic_union
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext import declarative as decl
+from sqlalchemy_1_3.ext.declarative import AbstractConcreteBase
+from sqlalchemy_1_3.ext.declarative import ConcreteBase
+from sqlalchemy_1_3.ext.declarative import declared_attr
+from sqlalchemy_1_3.ext.declarative import has_inherited_table
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import close_all_sessions
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import polymorphic_union
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 from test.orm.test_events import _RemoveListeners
 
 Base = None
@@ -357,7 +357,7 @@ class DeclarativeInheritanceTest(DeclarativeTestBase):
             id = Column(Integer, ForeignKey(Person.id), primary_key=True)
             __mapper_args__ = {"polymorphic_identity": "manager"}
 
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         assert inspect(Manager).inherits is inspect(Person)
 
@@ -390,7 +390,7 @@ class DeclarativeInheritanceTest(DeclarativeTestBase):
             id = Column(Integer, ForeignKey(Person.id), primary_key=True)
             __mapper_args__ = {"polymorphic_identity": "manager"}
 
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         assert inspect(Manager).inherits is inspect(Person)
 

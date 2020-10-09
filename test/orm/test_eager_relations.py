@@ -2,44 +2,44 @@
 
 import datetime
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import Date
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import load_only
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import undefer
-from sqlalchemy.sql import operators
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import OrderedDict as odict
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import close_all_sessions
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import contains_eager
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import defaultload
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import lazyload
+from sqlalchemy_1_3.orm import Load
+from sqlalchemy_1_3.orm import load_only
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import undefer
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.util import OrderedDict as odict
 from test.orm import _fixtures
 
 
@@ -1402,7 +1402,7 @@ class EagerTest(_fixtures.FixtureTest, testing.AssertsCompiledSQL):
             },
         )
 
-        from sqlalchemy.orm.interfaces import MapperOption
+        from sqlalchemy_1_3.orm.interfaces import MapperOption
 
         class MyBogusOption(MapperOption):
             propagate_to_loaders = True
@@ -3112,7 +3112,7 @@ class InnerJoinSplicingTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
         b_table = self.tables.b
         c1_table = self.tables.c1
 
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         weird_selectable = b_table.outerjoin(c1_table)
 

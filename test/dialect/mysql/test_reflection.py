@@ -2,42 +2,42 @@
 
 import re
 
-from sqlalchemy import BigInteger
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import DDL
-from sqlalchemy import DefaultClause
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import LargeBinary
-from sqlalchemy import MetaData
-from sqlalchemy import NCHAR
-from sqlalchemy import select
-from sqlalchemy import SmallInteger
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy import UniqueConstraint
-from sqlalchemy import util
-from sqlalchemy.dialects.mysql import base as mysql
-from sqlalchemy.dialects.mysql import reflection as _reflection
-from sqlalchemy.schema import CreateIndex
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
+from sqlalchemy_1_3 import BigInteger
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import DDL
+from sqlalchemy_1_3 import DefaultClause
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import LargeBinary
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import NCHAR
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import SmallInteger
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3 import TIMESTAMP
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import UnicodeText
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.dialects.mysql import base as mysql
+from sqlalchemy_1_3.dialects.mysql import reflection as _reflection
+from sqlalchemy_1_3.schema import CreateIndex
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
 
 
 class TypeReflectionTest(fixtures.TestBase):
@@ -235,7 +235,7 @@ class ReflectionTest(fixtures.TestBase, AssertsCompiledSQL):
     def test_default_reflection(self):
         """Test reflection of column defaults."""
 
-        from sqlalchemy.dialects.mysql import VARCHAR
+        from sqlalchemy_1_3.dialects.mysql import VARCHAR
 
         def_table = Table(
             "mysql_def",

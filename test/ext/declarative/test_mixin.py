@@ -1,36 +1,36 @@
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext import declarative as decl
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import base as orm_base
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import events as orm_events
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.util import classproperty
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext import declarative as decl
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.ext.declarative import declared_attr
+from sqlalchemy_1_3.orm import base as orm_base
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import close_all_sessions
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import events as orm_events
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
+from sqlalchemy_1_3.util import classproperty
 
 
 Base = None
@@ -1138,7 +1138,7 @@ class DeclarativeMixinTest(DeclarativeTestBase):
         eq_(Mapped.__dict__["some_attr"], "MappedSOME ATTR")
 
     def test_arbitrary_attrs_two(self):
-        from sqlalchemy.ext.associationproxy import association_proxy
+        from sqlalchemy_1_3.ext.associationproxy import association_proxy
 
         class FilterA(Base):
             __tablename__ = "filter_a"
@@ -1323,8 +1323,8 @@ class DeclarativeMixinPropertyTest(
         eq_(MyModel.t2.__doc__, """this is another document.""")
 
     def test_correct_for_proxies(self):
-        from sqlalchemy.ext.hybrid import hybrid_property
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3.ext.hybrid import hybrid_property
+        from sqlalchemy_1_3 import inspect
 
         class Mixin(object):
             @hybrid_property
@@ -1362,7 +1362,7 @@ class DeclarativeMixinPropertyTest(
         is_(b1.all_orm_descriptors["hp2"], d1.all_orm_descriptors["hp2"])
 
     def test_correct_for_proxies_doesnt_impact_synonyms(self):
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         class Mixin(object):
             @declared_attr
@@ -1766,7 +1766,7 @@ class DeclaredAttrTest(DeclarativeTestBase, testing.AssertsCompiledSQL):
         eq_(A.__table__.name, "foo")
 
     def test_col_prop_attrs_associated_w_class_for_mapper_args(self):
-        from sqlalchemy import Column
+        from sqlalchemy_1_3 import Column
         import collections
 
         asserted = collections.defaultdict(set)

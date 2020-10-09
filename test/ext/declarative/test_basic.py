@@ -1,50 +1,50 @@
-import sqlalchemy as sa
-from sqlalchemy import CheckConstraint
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import UniqueConstraint
-from sqlalchemy import util
-from sqlalchemy.ext import declarative as decl
-from sqlalchemy.ext.declarative import DeclarativeMeta
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.ext.declarative import synonym_for
-from sqlalchemy.ext.declarative.base import _DeferredMapperConfig
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import properties
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.events import MapperEvents
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import with_metaclass
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import CheckConstraint
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import ForeignKeyConstraint
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.ext import declarative as decl
+from sqlalchemy_1_3.ext.declarative import DeclarativeMeta
+from sqlalchemy_1_3.ext.declarative import declared_attr
+from sqlalchemy_1_3.ext.declarative import synonym_for
+from sqlalchemy_1_3.ext.declarative.base import _DeferredMapperConfig
+from sqlalchemy_1_3.ext.hybrid import hybrid_property
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import close_all_sessions
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import composite
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import properties
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.events import MapperEvents
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assertions
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.util import with_metaclass
 
 
 Base = None
@@ -491,7 +491,7 @@ class DeclarativeTest(DeclarativeTestBase):
     def test_recompile_on_othermapper(self):
         """declarative version of the same test in mappers.py"""
 
-        from sqlalchemy.orm import mapperlib
+        from sqlalchemy_1_3.orm import mapperlib
 
         class User(Base):
             __tablename__ = "users"
@@ -619,7 +619,7 @@ class DeclarativeTest(DeclarativeTestBase):
         assert foo.rel == u1
 
     def test_string_dependency_resolution_orm_descriptor(self):
-        from sqlalchemy.ext.hybrid import hybrid_property
+        from sqlalchemy_1_3.ext.hybrid import hybrid_property
 
         class User(Base):
             __tablename__ = "user"
@@ -1432,7 +1432,7 @@ class DeclarativeTest(DeclarativeTestBase):
         eq_(Foo.__table__.name, "foobat")
 
     def test_table_cls_attribute_return_none(self):
-        from sqlalchemy.schema import Column, PrimaryKeyConstraint
+        from sqlalchemy_1_3.schema import Column, PrimaryKeyConstraint
 
         class AutoTable(object):
             @declared_attr
@@ -1807,7 +1807,7 @@ class DeclarativeTest(DeclarativeTestBase):
         )
 
     def test_synonym_no_descriptor(self):
-        from sqlalchemy.orm.properties import ColumnProperty
+        from sqlalchemy_1_3.orm.properties import ColumnProperty
 
         class CustomCompare(ColumnProperty.Comparator):
 

@@ -4,47 +4,47 @@ from contextlib import contextmanager
 import re
 import weakref
 
-import sqlalchemy as tsa
-from sqlalchemy import bindparam
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import func
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import LargeBinary
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import TypeDecorator
-from sqlalchemy import util
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import default
-from sqlalchemy.engine.base import Engine
-from sqlalchemy.sql import column
-from sqlalchemy.sql import literal
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.mock import patch
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.util import nested
+import sqlalchemy_1_3 as tsa
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import INT
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import LargeBinary
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3 import VARCHAR
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.engine.base import Engine
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import literal
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import config
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.mock import patch
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
+from sqlalchemy_1_3.testing.util import picklers
+from sqlalchemy_1_3.util import nested
 
 
 users, metadata, users_autoinc = None, None, None
@@ -1682,7 +1682,7 @@ class EngineEventsTest(fixtures.TestBase):
 
     @testing.requires.ad_hoc_engines
     def test_cant_listen_to_option_engine(self):
-        from sqlalchemy.engine import base
+        from sqlalchemy_1_3.engine import base
 
         def evt(*arg, **kw):
             pass
@@ -1690,7 +1690,7 @@ class EngineEventsTest(fixtures.TestBase):
         assert_raises_message(
             tsa.exc.InvalidRequestError,
             r"Can't assign an event directly to the "
-            "<class 'sqlalchemy.engine.base.OptionEngine'> class",
+            "<class 'sqlalchemy_1_3.engine.base.OptionEngine'> class",
             event.listen,
             base.OptionEngine,
             "before_cursor_execute",
@@ -2386,7 +2386,7 @@ class HandleErrorTest(fixtures.TestBase):
         c1, c2 = column("a"), column("b")
 
         with mock.patch(
-            "sqlalchemy.engine.result.ResultProxy",
+            "sqlalchemy_1_3.engine.result.ResultProxy",
             Mock(side_effect=tsa.exc.InvalidRequestError("duplicate col")),
         ):
             # result should fail
@@ -2424,7 +2424,7 @@ class HandleErrorTest(fixtures.TestBase):
         conn = engine.connect()
 
         with mock.patch(
-            "sqlalchemy.engine.result.ResultProxy",
+            "sqlalchemy_1_3.engine.result.ResultProxy",
             Mock(side_effect=tsa.exc.InvalidRequestError("duplicate col")),
         ):
             assert_raises(

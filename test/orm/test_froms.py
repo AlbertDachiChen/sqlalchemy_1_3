@@ -1,45 +1,45 @@
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import asc
-from sqlalchemy import cast
-from sqlalchemy import desc
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import contains_alias
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relation
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.util import join
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.schema import Column
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import asc
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import desc
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import exists
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import contains_alias
+from sqlalchemy_1_3.orm import contains_eager
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relation
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.util import join
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.schema import Column
 from test.orm import _fixtures
 
 
@@ -625,7 +625,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_anonymous_expression(self):
-        from sqlalchemy.sql import column
+        from sqlalchemy_1_3.sql import column
 
         sess = create_session()
         c1, c2 = column("c1"), column("c2")
@@ -641,7 +641,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_anonymous_expression_from_self_twice(self):
-        from sqlalchemy.sql import column
+        from sqlalchemy_1_3.sql import column
 
         sess = create_session()
         c1, c2 = column("c1"), column("c2")
@@ -657,7 +657,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_anonymous_expression_union(self):
-        from sqlalchemy.sql import column
+        from sqlalchemy_1_3.sql import column
 
         sess = create_session()
         c1, c2 = column("c1"), column("c2")
@@ -673,7 +673,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_table_anonymous_expression_from_self_twice(self):
-        from sqlalchemy.sql import column
+        from sqlalchemy_1_3.sql import column
 
         sess = create_session()
         t1 = table("t1", column("c1"), column("c2"))
@@ -1192,7 +1192,7 @@ class InstancesTest(QueryTest, AssertsCompiledSQL):
         # test using Alias with more than one level deep
 
         # new way:
-        # from sqlalchemy.orm.strategy_options import Load
+        # from sqlalchemy_1_3.orm.strategy_options import Load
         # opt = Load(User).contains_eager('orders', alias=oalias).
         #     contains_eager('items', alias=ialias)
 

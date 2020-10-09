@@ -1,37 +1,37 @@
 import datetime
 import itertools
 
-import sqlalchemy as sa
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import DateTime
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Unicode
-from sqlalchemy.schema import CreateTable
-from sqlalchemy.sql import literal_column
-from sqlalchemy.sql import select
-from sqlalchemy.sql import text
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.types import TypeDecorator
-from sqlalchemy.types import TypeEngine
-from sqlalchemy.util import b
-from sqlalchemy.util import u
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3.schema import CreateTable
+from sqlalchemy_1_3.sql import literal_column
+from sqlalchemy_1_3.sql import select
+from sqlalchemy_1_3.sql import text
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.types import TypeDecorator
+from sqlalchemy_1_3.types import TypeEngine
+from sqlalchemy_1_3.util import b
+from sqlalchemy_1_3.util import u
 
 
 class DDLTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -117,7 +117,7 @@ class DDLTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_literal_binds_pgarray(self):
-        from sqlalchemy.dialects.postgresql import ARRAY, array
+        from sqlalchemy_1_3.dialects.postgresql import ARRAY, array
 
         m = MetaData()
         t = Table(

@@ -1,41 +1,41 @@
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import case
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import tuple_
-from sqlalchemy import union
-from sqlalchemy.sql import ClauseElement
-from sqlalchemy.sql import column
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql import visitors
-from sqlalchemy.sql.expression import _clone
-from sqlalchemy.sql.expression import _from_objects
-from sqlalchemy.sql.visitors import ClauseVisitor
-from sqlalchemy.sql.visitors import cloned_traverse
-from sqlalchemy.sql.visitors import CloningVisitor
-from sqlalchemy.sql.visitors import ReplacingCloningVisitor
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import case
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import tuple_
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3.sql import ClauseElement
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.sql import visitors
+from sqlalchemy_1_3.sql.expression import _clone
+from sqlalchemy_1_3.sql.expression import _from_objects
+from sqlalchemy_1_3.sql.visitors import ClauseVisitor
+from sqlalchemy_1_3.sql.visitors import cloned_traverse
+from sqlalchemy_1_3.sql.visitors import CloningVisitor
+from sqlalchemy_1_3.sql.visitors import ReplacingCloningVisitor
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
 
 
 A = B = t1 = t2 = t3 = table1 = table2 = table3 = table4 = None
@@ -160,7 +160,7 @@ class TraversalTest(fixtures.TestBase, AssertsExecutionResults):
         assert struct.is_other(s2)
 
     def test_clone_anon_label(self):
-        from sqlalchemy.sql.elements import Grouping
+        from sqlalchemy_1_3.sql.elements import Grouping
 
         c1 = Grouping(literal_column("q"))
         s1 = select([c1])
@@ -219,7 +219,7 @@ class TraversalTest(fixtures.TestBase, AssertsExecutionResults):
 
     def test_visit_name(self):
         # override fns in testlib/schema.py
-        from sqlalchemy import Column
+        from sqlalchemy_1_3 import Column
 
         class CustomObj(Column):
             pass
@@ -465,7 +465,7 @@ class ClauseTest(fixtures.TestBase, AssertsCompiledSQL):
         t = t.union_all(select([t.c.n + 1]).where(t.c.n < 100))
         s = select([func.sum(t.c.n)])
 
-        from sqlalchemy.sql.visitors import cloned_traverse
+        from sqlalchemy_1_3.sql.visitors import cloned_traverse
 
         cloned = cloned_traverse(s, {}, {})
 
@@ -488,7 +488,7 @@ class ClauseTest(fixtures.TestBase, AssertsCompiledSQL):
         t = t.union_all(select([t.c.n + 1]).where(t.c.n < 100))
         s = select([func.sum(t.c.n)])
 
-        from sqlalchemy.sql.visitors import cloned_traverse
+        from sqlalchemy_1_3.sql.visitors import cloned_traverse
 
         cloned = cloned_traverse(s, {}, {})
 
