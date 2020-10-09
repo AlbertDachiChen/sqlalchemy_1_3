@@ -3,41 +3,41 @@
 import logging
 import logging.handlers
 
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import dynamic_loader
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import reconstructor
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.persistence import _sort_states
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import composite
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import dynamic_loader
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import reconstructor
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm.persistence import _sort_states
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -95,7 +95,7 @@ class MapperTest(_fixtures.FixtureTest, AssertsCompiledSQL):
         addresses = self.tables.addresses
         Address = self.classes.Address
 
-        from sqlalchemy.orm.base import _is_mapped_class, _is_aliased_class
+        from sqlalchemy_1_3.orm.base import _is_mapped_class, _is_aliased_class
 
         class Foo(object):
             x = "something"
@@ -132,7 +132,7 @@ class MapperTest(_fixtures.FixtureTest, AssertsCompiledSQL):
     def test_entity_descriptor(self):
         users = self.tables.users
 
-        from sqlalchemy.orm.base import _entity_descriptor
+        from sqlalchemy_1_3.orm.base import _entity_descriptor
 
         class Foo(object):
             x = "something"
@@ -473,11 +473,11 @@ class MapperTest(_fixtures.FixtureTest, AssertsCompiledSQL):
         class B(object):
             pass
 
-        from sqlalchemy.testing import mock
-        from sqlalchemy.orm.attributes import register_attribute_impl
+        from sqlalchemy_1_3.testing import mock
+        from sqlalchemy_1_3.orm.attributes import register_attribute_impl
 
         with mock.patch(
-            "sqlalchemy.orm.attributes.register_attribute_impl",
+            "sqlalchemy_1_3.orm.attributes.register_attribute_impl",
             side_effect=register_attribute_impl,
         ) as some_mock:
 
@@ -1562,7 +1562,7 @@ class MapperTest(_fixtures.FixtureTest, AssertsCompiledSQL):
         assert hasattr(User.x, "comparator")
 
     def test_synonym_of_non_property_raises(self):
-        from sqlalchemy.ext.associationproxy import association_proxy
+        from sqlalchemy_1_3.ext.associationproxy import association_proxy
 
         class User(object):
             pass
@@ -2060,11 +2060,11 @@ class DocumentTest(fixtures.TestBase):
 class ORMLoggingTest(_fixtures.FixtureTest):
     def setup(self):
         self.buf = logging.handlers.BufferingHandler(100)
-        for log in [logging.getLogger("sqlalchemy.orm")]:
+        for log in [logging.getLogger("sqlalchemy_1_3.orm")]:
             log.addHandler(self.buf)
 
     def teardown(self):
-        for log in [logging.getLogger("sqlalchemy.orm")]:
+        for log in [logging.getLogger("sqlalchemy_1_3.orm")]:
             log.removeHandler(self.buf)
 
     def _current_messages(self):
@@ -2607,7 +2607,7 @@ class ComparatorFactoryTest(_fixtures.FixtureTest, AssertsCompiledSQL):
             def __init__(self, x, y):
                 pass
 
-        from sqlalchemy.orm.interfaces import PropComparator
+        from sqlalchemy_1_3.orm.interfaces import PropComparator
 
         class MyFactory(PropComparator):
             pass
@@ -2628,7 +2628,7 @@ class ComparatorFactoryTest(_fixtures.FixtureTest, AssertsCompiledSQL):
     def test_column(self):
         User, users = self.classes.User, self.tables.users
 
-        from sqlalchemy.orm.properties import ColumnProperty
+        from sqlalchemy_1_3.orm.properties import ColumnProperty
 
         class MyFactory(ColumnProperty.Comparator):
             __hash__ = None
@@ -2661,7 +2661,7 @@ class ComparatorFactoryTest(_fixtures.FixtureTest, AssertsCompiledSQL):
     def test_synonym(self):
         users, User = self.tables.users, self.classes.User
 
-        from sqlalchemy.orm.properties import ColumnProperty
+        from sqlalchemy_1_3.orm.properties import ColumnProperty
 
         class MyFactory(ColumnProperty.Comparator):
             __hash__ = None
@@ -2700,7 +2700,7 @@ class ComparatorFactoryTest(_fixtures.FixtureTest, AssertsCompiledSQL):
             self.classes.User,
         )
 
-        from sqlalchemy.orm.properties import RelationshipProperty
+        from sqlalchemy_1_3.orm.properties import RelationshipProperty
 
         # NOTE: this API changed in 0.8, previously __clause_element__()
         # gave the parent selecatable, now it gives the

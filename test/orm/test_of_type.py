@@ -1,23 +1,23 @@
-from sqlalchemy import and_
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.schema import Column
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import contains_eager
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm import with_polymorphic
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.entities import ComparableEntity
+from sqlalchemy_1_3.testing.schema import Column
 from .inheritance._poly_fixtures import _PolymorphicAliasedJoins
 from .inheritance._poly_fixtures import _PolymorphicJoins
 from .inheritance._poly_fixtures import _PolymorphicPolymorphic
@@ -281,9 +281,9 @@ class PolymorphicPolymorphicTest(
     _PolymorphicTestBase, _PolymorphicPolymorphic
 ):
     def _polymorphic_join_target(self, cls):
-        from sqlalchemy.orm import class_mapper
+        from sqlalchemy_1_3.orm import class_mapper
 
-        from sqlalchemy.sql.expression import FromGrouping
+        from sqlalchemy_1_3.sql.expression import FromGrouping
 
         m, sel = class_mapper(Person)._with_polymorphic_args(cls)
         sel = FromGrouping(sel.alias(flat=True))
@@ -329,7 +329,7 @@ class PolymorphicPolymorphicTest(
 
 class PolymorphicUnionsTest(_PolymorphicTestBase, _PolymorphicUnions):
     def _polymorphic_join_target(self, cls):
-        from sqlalchemy.orm import class_mapper
+        from sqlalchemy_1_3.orm import class_mapper
 
         sel = class_mapper(Person)._with_polymorphic_selectable.element
         comp_sel = sel.compile(dialect=default.DefaultDialect())
@@ -372,7 +372,7 @@ class PolymorphicAliasedJoinsTest(
     _PolymorphicTestBase, _PolymorphicAliasedJoins
 ):
     def _polymorphic_join_target(self, cls):
-        from sqlalchemy.orm import class_mapper
+        from sqlalchemy_1_3.orm import class_mapper
 
         sel = class_mapper(Person)._with_polymorphic_selectable.element
         comp_sel = sel.compile(dialect=default.DefaultDialect())
@@ -416,8 +416,8 @@ class PolymorphicAliasedJoinsTest(
 
 class PolymorphicJoinsTest(_PolymorphicTestBase, _PolymorphicJoins):
     def _polymorphic_join_target(self, cls):
-        from sqlalchemy.orm import class_mapper
-        from sqlalchemy.sql.expression import FromGrouping
+        from sqlalchemy_1_3.orm import class_mapper
+        from sqlalchemy_1_3.sql.expression import FromGrouping
 
         sel = FromGrouping(
             class_mapper(Person)._with_polymorphic_selectable.alias(flat=True)

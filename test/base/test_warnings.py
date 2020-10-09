@@ -1,8 +1,8 @@
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_deprecated
-from sqlalchemy.testing import fixtures
-from sqlalchemy.util.deprecations import warn_deprecated_limited
-from sqlalchemy.util.langhelpers import _hash_limit_string
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_deprecated
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.util.deprecations import warn_deprecated_limited
+from sqlalchemy_1_3.util.langhelpers import _hash_limit_string
 
 
 class WarnDeprecatedLimitedTest(fixtures.TestBase):

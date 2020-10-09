@@ -4,56 +4,56 @@ import datetime
 import decimal
 import os
 
-import sqlalchemy as sa
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import DefaultClause
-from sqlalchemy import Float
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import LargeBinary
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import PickleType
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import Time
-from sqlalchemy import types
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy import util
-from sqlalchemy.databases import mssql
-from sqlalchemy.dialects.mssql import ROWVERSION
-from sqlalchemy.dialects.mssql import TIMESTAMP
-from sqlalchemy.dialects.mssql.base import _MSDate
-from sqlalchemy.dialects.mssql.base import DATETIMEOFFSET
-from sqlalchemy.dialects.mssql.base import MS_2005_VERSION
-from sqlalchemy.dialects.mssql.base import MS_2008_VERSION
-from sqlalchemy.dialects.mssql.base import TIME
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import ComparesTables
-from sqlalchemy.testing import emits_warning_on
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import pickleable
-from sqlalchemy.util import b
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import DefaultClause
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import LargeBinary
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import PickleType
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import Time
+from sqlalchemy_1_3 import types
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import UnicodeText
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.databases import mssql
+from sqlalchemy_1_3.dialects.mssql import ROWVERSION
+from sqlalchemy_1_3.dialects.mssql import TIMESTAMP
+from sqlalchemy_1_3.dialects.mssql.base import _MSDate
+from sqlalchemy_1_3.dialects.mssql.base import DATETIMEOFFSET
+from sqlalchemy_1_3.dialects.mssql.base import MS_2005_VERSION
+from sqlalchemy_1_3.dialects.mssql.base import MS_2008_VERSION
+from sqlalchemy_1_3.dialects.mssql.base import TIME
+from sqlalchemy_1_3.sql import sqltypes
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import ComparesTables
+from sqlalchemy_1_3.testing import emits_warning_on
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import pickleable
+from sqlalchemy_1_3.util import b
 
 
 class TimeParameterTest(fixtures.TablesTest):
@@ -152,7 +152,7 @@ class MSDateTypeTest(fixtures.TestBase):
         )
 
     def test_extract(self):
-        from sqlalchemy import extract
+        from sqlalchemy_1_3 import extract
 
         fivedaysago = datetime.datetime.now() - datetime.timedelta(days=5)
         for field, exp in (

@@ -5,50 +5,50 @@ import datetime
 import decimal
 import os
 
-from sqlalchemy import bindparam
-from sqlalchemy import cast
-from sqlalchemy import CHAR
-from sqlalchemy import DATE
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import event
-from sqlalchemy import FLOAT
-from sqlalchemy import Float
-from sqlalchemy import Integer
-from sqlalchemy import LargeBinary
-from sqlalchemy import MetaData
-from sqlalchemy import NCHAR
-from sqlalchemy import Numeric
-from sqlalchemy import NVARCHAR
-from sqlalchemy import select
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types as sqltypes
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy import util
-from sqlalchemy import VARCHAR
-from sqlalchemy.dialects.oracle import base as oracle
-from sqlalchemy.dialects.oracle import cx_oracle
-from sqlalchemy.sql import column
-from sqlalchemy.sql.sqltypes import NullType
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import b
-from sqlalchemy.util import py2k
-from sqlalchemy.util import u
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import CHAR
+from sqlalchemy_1_3 import DATE
+from sqlalchemy_1_3 import Date
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import FLOAT
+from sqlalchemy_1_3 import Float
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import LargeBinary
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import NCHAR
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import NVARCHAR
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import SmallInteger
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import TIMESTAMP
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import types as sqltypes
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import UnicodeText
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3 import VARCHAR
+from sqlalchemy_1_3.dialects.oracle import base as oracle
+from sqlalchemy_1_3.dialects.oracle import cx_oracle
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql.sqltypes import NullType
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.util import b
+from sqlalchemy_1_3.util import py2k
+from sqlalchemy_1_3.util import u
 
 
 class DialectTypesTest(fixtures.TestBase, AssertsCompiledSQL):

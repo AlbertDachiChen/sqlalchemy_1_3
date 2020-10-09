@@ -2,25 +2,25 @@ import random
 import threading
 import time
 
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.ext.automap import generate_relationship
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import interfaces
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.mock import patch
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext.automap import automap_base
+from sqlalchemy_1_3.ext.automap import generate_relationship
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import interfaces
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.mock import patch
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 from ..orm._fixtures import FixtureTest
 
 

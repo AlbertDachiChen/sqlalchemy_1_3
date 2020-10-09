@@ -5,59 +5,59 @@ import datetime
 import json
 import os
 
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import CheckConstraint
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import Computed
-from sqlalchemy import create_engine
-from sqlalchemy import DefaultClause
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import MetaData
-from sqlalchemy import pool
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import tuple_
-from sqlalchemy import types as sqltypes
-from sqlalchemy import UniqueConstraint
-from sqlalchemy import util
-from sqlalchemy.dialects.sqlite import base as sqlite
-from sqlalchemy.dialects.sqlite import pysqlite as pysqlite_dialect
-from sqlalchemy.engine.reflection import Inspector
-from sqlalchemy.engine.url import make_url
-from sqlalchemy.schema import CreateTable
-from sqlalchemy.schema import FetchedValue
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import combinations
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.types import Boolean
-from sqlalchemy.types import Date
-from sqlalchemy.types import DateTime
-from sqlalchemy.types import Integer
-from sqlalchemy.types import String
-from sqlalchemy.types import Time
-from sqlalchemy.util import u
-from sqlalchemy.util import ue
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import CheckConstraint
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import DefaultClause
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import pool
+from sqlalchemy_1_3 import PrimaryKeyConstraint
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import tuple_
+from sqlalchemy_1_3 import types as sqltypes
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.dialects.sqlite import base as sqlite
+from sqlalchemy_1_3.dialects.sqlite import pysqlite as pysqlite_dialect
+from sqlalchemy_1_3.engine.reflection import Inspector
+from sqlalchemy_1_3.engine.url import make_url
+from sqlalchemy_1_3.schema import CreateTable
+from sqlalchemy_1_3.schema import FetchedValue
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import combinations
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.types import Boolean
+from sqlalchemy_1_3.types import Date
+from sqlalchemy_1_3.types import DateTime
+from sqlalchemy_1_3.types import Integer
+from sqlalchemy_1_3.types import String
+from sqlalchemy_1_3.types import Time
+from sqlalchemy_1_3.util import u
+from sqlalchemy_1_3.util import ue
 
 
 class TestTypes(fixtures.TestBase, AssertsExecutionResults):
@@ -2503,7 +2503,7 @@ class TypeReflectionTest(fixtures.TestBase):
             is_(type(final_type), expected_type)
 
     def _test_round_trip(self, fixture, warnings=False):
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         conn = testing.db.connect()
         for from_, to_ in self._fixture_as_string(fixture):

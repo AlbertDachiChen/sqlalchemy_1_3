@@ -1,43 +1,43 @@
 import copy
 
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import state as sa_state
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.collections import attribute_mapped_collection
-from sqlalchemy.orm.collections import column_mapped_collection
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.pickleable import Address
-from sqlalchemy.testing.pickleable import Child1
-from sqlalchemy.testing.pickleable import Child2
-from sqlalchemy.testing.pickleable import Dingaling
-from sqlalchemy.testing.pickleable import EmailUser
-from sqlalchemy.testing.pickleable import Order
-from sqlalchemy.testing.pickleable import Parent
-from sqlalchemy.testing.pickleable import Screen
-from sqlalchemy.testing.pickleable import User
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.util import pickle
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import instrumentation
+from sqlalchemy_1_3.orm import lazyload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm import state as sa_state
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm import with_polymorphic
+from sqlalchemy_1_3.orm.collections import attribute_mapped_collection
+from sqlalchemy_1_3.orm.collections import column_mapped_collection
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.pickleable import Address
+from sqlalchemy_1_3.testing.pickleable import Child1
+from sqlalchemy_1_3.testing.pickleable import Child2
+from sqlalchemy_1_3.testing.pickleable import Dingaling
+from sqlalchemy_1_3.testing.pickleable import EmailUser
+from sqlalchemy_1_3.testing.pickleable import Order
+from sqlalchemy_1_3.testing.pickleable import Parent
+from sqlalchemy_1_3.testing.pickleable import Screen
+from sqlalchemy_1_3.testing.pickleable import User
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import picklers
+from sqlalchemy_1_3.util import pickle
 from test.orm import _fixtures
 from .inheritance._poly_fixtures import _Polymorphic
 from .inheritance._poly_fixtures import Company
@@ -156,7 +156,7 @@ class PickleTest(fixtures.MappedTest):
         assert_raises_message(
             orm_exc.UnmappedInstanceError,
             "Cannot deserialize object of type "
-            "<class 'sqlalchemy.testing.pickleable.User'> - no mapper()",
+            "<class 'sqlalchemy_1_3.testing.pickleable.User'> - no mapper()",
             pickle.loads,
             u1_pickled,
         )

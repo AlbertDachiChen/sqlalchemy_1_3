@@ -1,15 +1,15 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.attributes import instance_state
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.attributes import instance_state
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
 
 
 engine = testing.db

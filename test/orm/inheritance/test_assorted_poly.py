@@ -3,33 +3,33 @@ These are generally tests derived from specific user issues.
 
 """
 
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Unicode
-from sqlalchemy import util
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import polymorphic_union
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.interfaces import MANYTOONE
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import exists
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.orm import class_mapper
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import contains_eager
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import join
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import polymorphic_union
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import with_polymorphic
+from sqlalchemy_1_3.orm.interfaces import MANYTOONE
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class RelationshipTest1(fixtures.MappedTest):
@@ -2084,7 +2084,7 @@ class ColSubclassTest(
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.schema import Column
+        from sqlalchemy_1_3.schema import Column
 
         Base = cls.DeclarativeBasic
 

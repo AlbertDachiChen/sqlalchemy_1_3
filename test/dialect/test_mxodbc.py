@@ -1,11 +1,11 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Table
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.mock import Mock
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.mock import Mock
 
 
 def mock_dbapi():

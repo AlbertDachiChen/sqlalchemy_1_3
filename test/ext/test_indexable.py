@@ -1,21 +1,21 @@
-import sqlalchemy as sa
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.indexable import index_property
-from sqlalchemy.orm import Session
-from sqlalchemy.sql.sqltypes import ARRAY
-from sqlalchemy.sql.sqltypes import JSON
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.schema import Column
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import Text
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.ext.indexable import index_property
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.sql.sqltypes import ARRAY
+from sqlalchemy_1_3.sql.sqltypes import JSON
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing import not_in
+from sqlalchemy_1_3.testing.schema import Column
 
 
 class IndexPropertyTest(fixtures.TestBase):
@@ -230,7 +230,7 @@ class IndexPropertyArrayTest(fixtures.DeclarativeMappedTest):
         eq_(a.first, 2)
 
     def test_modified(self):
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         Array = self.classes.Array
         s = Session(testing.db)
@@ -259,7 +259,7 @@ class IndexPropertyJsonTest(fixtures.DeclarativeMappedTest):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.dialects.postgresql import JSON
+        from sqlalchemy_1_3.dialects.postgresql import JSON
 
         Base = cls.DeclarativeBasic
 

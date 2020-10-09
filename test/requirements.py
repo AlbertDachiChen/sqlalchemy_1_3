@@ -5,22 +5,22 @@
 
 import sys
 
-from sqlalchemy import exc
-from sqlalchemy import util
-from sqlalchemy.sql import text
-from sqlalchemy.testing import exclusions
-from sqlalchemy.testing.exclusions import against
-from sqlalchemy.testing.exclusions import fails_if
-from sqlalchemy.testing.exclusions import fails_on
-from sqlalchemy.testing.exclusions import fails_on_everything_except
-from sqlalchemy.testing.exclusions import LambdaPredicate
-from sqlalchemy.testing.exclusions import NotPredicate
-from sqlalchemy.testing.exclusions import only_if
-from sqlalchemy.testing.exclusions import only_on
-from sqlalchemy.testing.exclusions import skip_if
-from sqlalchemy.testing.exclusions import SpecPredicate
-from sqlalchemy.testing.exclusions import succeeds_if
-from sqlalchemy.testing.requirements import SuiteRequirements
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.sql import text
+from sqlalchemy_1_3.testing import exclusions
+from sqlalchemy_1_3.testing.exclusions import against
+from sqlalchemy_1_3.testing.exclusions import fails_if
+from sqlalchemy_1_3.testing.exclusions import fails_on
+from sqlalchemy_1_3.testing.exclusions import fails_on_everything_except
+from sqlalchemy_1_3.testing.exclusions import LambdaPredicate
+from sqlalchemy_1_3.testing.exclusions import NotPredicate
+from sqlalchemy_1_3.testing.exclusions import only_if
+from sqlalchemy_1_3.testing.exclusions import only_on
+from sqlalchemy_1_3.testing.exclusions import skip_if
+from sqlalchemy_1_3.testing.exclusions import SpecPredicate
+from sqlalchemy_1_3.testing.exclusions import succeeds_if
+from sqlalchemy_1_3.testing.requirements import SuiteRequirements
 
 
 def no_support(db, reason):

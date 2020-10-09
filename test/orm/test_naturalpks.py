@@ -5,26 +5,26 @@ Primary key changing capabilities and passive/non-passive cascading updates.
 
 import itertools
 
-import sqlalchemy as sa
-from sqlalchemy import bindparam
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.session import make_transient
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.session import make_transient
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -1394,7 +1394,7 @@ class CascadeToFKPKTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
         sess.add(u2)
         sess.add(a2)
 
-        from sqlalchemy.testing.assertsql import CompiledSQL
+        from sqlalchemy_1_3.testing.assertsql import CompiledSQL
 
         # test that the primary key columns of addresses are not
         # being updated as well, since this is a row switch.

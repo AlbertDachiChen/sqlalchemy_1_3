@@ -4,38 +4,38 @@ from copy import deepcopy
 
 import pytest
 
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import create_engine
-from sqlalchemy import DateTime
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.schema import DDL
-from sqlalchemy.sql import functions
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.functions import GenericFunction
-from sqlalchemy.sql.sqltypes import NullType
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import not_in
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.schema import DDL
+from sqlalchemy_1_3.sql import functions
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.sql.functions import GenericFunction
+from sqlalchemy_1_3.sql.sqltypes import NullType
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing import not_in
 
 
 class DeprecationWarningsTest(fixtures.TestBase):

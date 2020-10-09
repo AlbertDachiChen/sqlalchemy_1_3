@@ -1,36 +1,36 @@
 from __future__ import with_statement
 
-from sqlalchemy import Column
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import session as _session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.util import identity_key
-from sqlalchemy.sql import elements
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warnings
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.util import gc_collect
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import session as _session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm.util import identity_key
+from sqlalchemy_1_3.sql import elements
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assert_warnings
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.util import gc_collect
 from test.orm._fixtures import FixtureTest
 
 

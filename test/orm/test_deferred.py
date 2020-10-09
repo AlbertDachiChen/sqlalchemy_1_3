@@ -1,33 +1,33 @@
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import load_only
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import query_expression
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import undefer_group
-from sqlalchemy.orm import with_expression
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.sql import literal
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import contains_eager
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import defaultload
+from sqlalchemy_1_3.orm import defer
+from sqlalchemy_1_3.orm import deferred
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import Load
+from sqlalchemy_1_3.orm import load_only
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import query_expression
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm import undefer
+from sqlalchemy_1_3.orm import undefer_group
+from sqlalchemy_1_3.orm import with_expression
+from sqlalchemy_1_3.orm import with_polymorphic
+from sqlalchemy_1_3.sql import literal
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing.schema import Column
 from test.orm import _fixtures
 from .inheritance._poly_fixtures import _Polymorphic
 from .inheritance._poly_fixtures import Boss
@@ -1229,7 +1229,7 @@ class InheritanceTest(_Polymorphic):
     @classmethod
     def setup_mappers(cls):
         super(InheritanceTest, cls).setup_mappers()
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         inspect(Company).add_property("managers", relationship(Manager))
 

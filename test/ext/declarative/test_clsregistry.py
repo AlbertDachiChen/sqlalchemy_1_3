@@ -1,13 +1,13 @@
 import weakref
 
-from sqlalchemy import exc
-from sqlalchemy import MetaData
-from sqlalchemy.ext.declarative import clsregistry
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.util import gc_collect
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3.ext.declarative import clsregistry
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.util import gc_collect
 
 
 class MockClass(object):
@@ -115,19 +115,19 @@ class ClsRegistryTest(fixtures.TestBase):
 
         gc_collect()
 
-        import sqlalchemy
+        import sqlalchemy_1_3
 
         is_(
-            resolver("__import__('sqlalchemy.util').util.EMPTY_SET")(),
-            sqlalchemy.util.EMPTY_SET,
+            resolver("__import__('sqlalchemy_1_3.util').util.EMPTY_SET")(),
+            sqlalchemy_1_3.util.EMPTY_SET,
         )
 
         assert_raises_message(
             exc.InvalidRequestError,
             r"When initializing mapper some_parent, expression "
-            r"\"__import__\('sqlalchemy.util'\).util.EMPTY_SET\" "
+            r"\"__import__\('sqlalchemy_1_3.util'\).util.EMPTY_SET\" "
             "failed to locate a name",
-            name_resolver("__import__('sqlalchemy.util').util.EMPTY_SET"),
+            name_resolver("__import__('sqlalchemy_1_3.util').util.EMPTY_SET"),
         )
 
     def test_resolve_dupe_by_name(self):

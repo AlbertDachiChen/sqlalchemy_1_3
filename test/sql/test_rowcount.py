@@ -1,15 +1,15 @@
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
 
 
 class FoundRowsTest(fixtures.TestBase, AssertsExecutionResults):

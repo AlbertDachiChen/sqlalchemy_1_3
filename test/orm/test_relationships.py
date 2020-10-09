@@ -1,51 +1,51 @@
 import datetime
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import foreign
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relation
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import remote
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.interfaces import MANYTOONE
-from sqlalchemy.orm.interfaces import ONETOMANY
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import startswith_
-from sqlalchemy.testing.assertsql import assert_engine
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import ForeignKeyConstraint
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import composite
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import foreign
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relation
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import remote
+from sqlalchemy_1_3.orm import selectinload
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm.interfaces import MANYTOONE
+from sqlalchemy_1_3.orm.interfaces import ONETOMANY
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import startswith_
+from sqlalchemy_1_3.testing.assertsql import assert_engine
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -2208,7 +2208,7 @@ class NoLoadBackPopulates(_fixtures.FixtureTest):
 
 class JoinConditionErrorTest(fixtures.TestBase):
     def test_clauseelement_pj(self):
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         Base = declarative_base()
 
@@ -2225,7 +2225,7 @@ class JoinConditionErrorTest(fixtures.TestBase):
         assert_raises(sa.exc.ArgumentError, configure_mappers)
 
     def test_clauseelement_pj_false(self):
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         Base = declarative_base()
 
@@ -2266,7 +2266,7 @@ class JoinConditionErrorTest(fixtures.TestBase):
         assert_raises(sa.exc.ArgumentError, configure_mappers)
 
     def test_invalid_string_args(self):
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         for argname, arg in [
             ("remote_side", ["c1.id"]),

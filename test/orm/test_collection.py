@@ -1,27 +1,27 @@
 import contextlib
 from operator import and_
 
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import text
-from sqlalchemy import util
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-import sqlalchemy.orm.collections as collections
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import instrumentation
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+import sqlalchemy_1_3.orm.collections as collections
+from sqlalchemy_1_3.orm.collections import collection
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class Canary(object):
@@ -1834,7 +1834,7 @@ class DictHelpersTest(fixtures.MappedTest):
         """test that uncompiled attribute usage works with
         column_mapped_collection"""
 
-        from sqlalchemy.ext.declarative import declarative_base
+        from sqlalchemy_1_3.ext.declarative import declarative_base
 
         BaseObject = declarative_base()
 
@@ -1955,7 +1955,7 @@ class ColumnMappedWSerialize(fixtures.MappedTest):
         )
 
     def test_selectable_column_mapped(self):
-        from sqlalchemy import select
+        from sqlalchemy_1_3 import select
 
         s = select([self.tables.foo]).alias()
         Foo = self.classes.Foo
@@ -1963,7 +1963,7 @@ class ColumnMappedWSerialize(fixtures.MappedTest):
         self._run_test([(Foo.b, Foo(b=5), 5), (s.c.b, Foo(b=5), 5)])
 
     def _run_test(self, specs):
-        from sqlalchemy.testing.util import picklers
+        from sqlalchemy_1_3.testing.util import picklers
 
         for spec, obj, expected in specs:
             coll = collections.column_mapped_collection(spec)()

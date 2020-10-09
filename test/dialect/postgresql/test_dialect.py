@@ -4,49 +4,49 @@ import datetime
 import logging
 import logging.handlers
 
-from sqlalchemy import BigInteger
-from sqlalchemy import bindparam
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import dialects
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import TypeDecorator
-from sqlalchemy.dialects.postgresql import base as postgresql
-from sqlalchemy.dialects.postgresql import psycopg2 as psycopg2_dialect
-from sqlalchemy.dialects.postgresql.psycopg2 import EXECUTEMANY_BATCH
-from sqlalchemy.dialects.postgresql.psycopg2 import EXECUTEMANY_DEFAULT
-from sqlalchemy.dialects.postgresql.psycopg2 import EXECUTEMANY_VALUES
-from sqlalchemy.engine import engine_from_config
-from sqlalchemy.engine import url
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import expect_deprecated
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import AssertsCompiledSQL
-from sqlalchemy.testing.assertions import AssertsExecutionResults
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import eq_regex
-from sqlalchemy.testing.assertions import ne_
+from sqlalchemy_1_3 import BigInteger
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import DateTime
+from sqlalchemy_1_3 import dialects
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import extract
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import SmallInteger
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3.dialects.postgresql import base as postgresql
+from sqlalchemy_1_3.dialects.postgresql import psycopg2 as psycopg2_dialect
+from sqlalchemy_1_3.dialects.postgresql.psycopg2 import EXECUTEMANY_BATCH
+from sqlalchemy_1_3.dialects.postgresql.psycopg2 import EXECUTEMANY_DEFAULT
+from sqlalchemy_1_3.dialects.postgresql.psycopg2 import EXECUTEMANY_VALUES
+from sqlalchemy_1_3.engine import engine_from_config
+from sqlalchemy_1_3.engine import url
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import expect_deprecated
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.assertions import assert_raises
+from sqlalchemy_1_3.testing.assertions import assert_raises_message
+from sqlalchemy_1_3.testing.assertions import AssertsCompiledSQL
+from sqlalchemy_1_3.testing.assertions import AssertsExecutionResults
+from sqlalchemy_1_3.testing.assertions import eq_
+from sqlalchemy_1_3.testing.assertions import eq_regex
+from sqlalchemy_1_3.testing.assertions import ne_
 from ...engine import test_execute
 
 
@@ -109,16 +109,16 @@ class DialectTest(fixtures.TestBase):
     @testing.requires.psycopg2_compatibility
     def test_pg_dialect_use_native_unicode_from_config(self):
         config = {
-            "sqlalchemy.url": testing.db.url,
-            "sqlalchemy.use_native_unicode": "false",
+            "sqlalchemy_1_3.url": testing.db.url,
+            "sqlalchemy_1_3.use_native_unicode": "false",
         }
 
         e = engine_from_config(config, _initialize=False)
         eq_(e.dialect.use_native_unicode, False)
 
         config = {
-            "sqlalchemy.url": testing.db.url,
-            "sqlalchemy.use_native_unicode": "true",
+            "sqlalchemy_1_3.url": testing.db.url,
+            "sqlalchemy_1_3.use_native_unicode": "true",
         }
 
         e = engine_from_config(config, _initialize=False)
@@ -620,7 +620,7 @@ class MiscBackendTest(
     @testing.requires.no_coverage
     @testing.requires.psycopg2_compatibility
     def test_notice_logging(self):
-        log = logging.getLogger("sqlalchemy.dialects.postgresql")
+        log = logging.getLogger("sqlalchemy_1_3.dialects.postgresql")
         buf = logging.handlers.BufferingHandler(100)
         lev = log.level
         log.addHandler(buf)
@@ -760,7 +760,7 @@ $$ LANGUAGE plpgsql;
         )
 
     def test_quoted_name_bindparam_ok(self):
-        from sqlalchemy.sql.elements import quoted_name
+        from sqlalchemy_1_3.sql.elements import quoted_name
 
         with testing.db.connect() as conn:
             eq_(

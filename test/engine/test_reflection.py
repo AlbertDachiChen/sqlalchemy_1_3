@@ -1,40 +1,40 @@
 import unicodedata
 
-import sqlalchemy as sa
-from sqlalchemy import Computed
-from sqlalchemy import DefaultClause
-from sqlalchemy import FetchedValue
-from sqlalchemy import ForeignKey
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import ComparesTables
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_regex
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_instance_of
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing import skip
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import ue
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import Computed
+from sqlalchemy_1_3 import DefaultClause
+from sqlalchemy_1_3 import FetchedValue
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import schema
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import ComparesTables
+from sqlalchemy_1_3.testing import config
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import eq_regex
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_instance_of
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing import not_in
+from sqlalchemy_1_3.testing import skip
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.util import ue
 
 
 metadata, users = None, None
@@ -1174,7 +1174,7 @@ class ReflectionTest(fixtures.TestBase, ComparesTables):
 
     @testing.provide_metadata
     def _test_reflect_uses_bind(self, fn):
-        from sqlalchemy.pool import AssertionPool
+        from sqlalchemy_1_3.pool import AssertionPool
 
         e = engines.testing_engine(options={"poolclass": AssertionPool})
         fn(e)
@@ -2154,7 +2154,7 @@ class ColumnEventsTest(fixtures.RemovesEvents, fixtures.TestBase):
     def _do_test(self, col, update, assert_, tablename="to_reflect"):
         # load the actual Table class, not the test
         # wrapper
-        from sqlalchemy.schema import Table
+        from sqlalchemy_1_3.schema import Table
 
         m = MetaData(testing.db)
 

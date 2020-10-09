@@ -1,44 +1,44 @@
 import copy
 import pickle
 
-from sqlalchemy import cast
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.ext.associationproxy import _AssociationList
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import collections
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.collections import attribute_mapped_collection
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.ext.associationproxy import _AssociationList
+from sqlalchemy_1_3.ext.associationproxy import association_proxy
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.ext.declarative import declared_attr
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import collections
+from sqlalchemy_1_3.orm import composite
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.collections import attribute_mapped_collection
+from sqlalchemy_1_3.orm.collections import collection
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.assertions import expect_warnings
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.testing.util import gc_collect
 
 
 class DictCollection(dict):
@@ -3191,7 +3191,7 @@ class ProxyOfSynonymTest(AssertsCompiledSQL, fixtures.DeclarativeMappedTest):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.orm import synonym
+        from sqlalchemy_1_3.orm import synonym
 
         Base = cls.DeclarativeBasic
 
@@ -3241,8 +3241,8 @@ class ProxyHybridTest(fixtures.DeclarativeMappedTest, AssertsCompiledSQL):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.ext.hybrid import hybrid_property
-        from sqlalchemy.orm.interfaces import PropComparator
+        from sqlalchemy_1_3.ext.hybrid import hybrid_property
+        from sqlalchemy_1_3.orm.interfaces import PropComparator
 
         Base = cls.DeclarativeBasic
 

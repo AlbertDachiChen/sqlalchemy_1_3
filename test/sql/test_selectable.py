@@ -1,47 +1,47 @@
 """Test various algorithmic properties of selectables."""
 
-from sqlalchemy import alias
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import not_
-from sqlalchemy import null
-from sqlalchemy import or_
-from sqlalchemy import outerjoin
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import type_coerce
-from sqlalchemy import TypeDecorator
-from sqlalchemy import union
-from sqlalchemy import util
-from sqlalchemy.sql import Alias
-from sqlalchemy.sql import column
-from sqlalchemy.sql import elements
-from sqlalchemy.sql import expression
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql import visitors
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
+from sqlalchemy_1_3 import alias
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import exists
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import join
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import not_
+from sqlalchemy_1_3 import null
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import outerjoin
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Sequence
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import type_coerce
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.sql import Alias
+from sqlalchemy_1_3.sql import column
+from sqlalchemy_1_3.sql import elements
+from sqlalchemy_1_3.sql import expression
+from sqlalchemy_1_3.sql import table
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.sql import visitors
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import AssertsExecutionResults
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
 
 
 metadata = MetaData()
@@ -195,7 +195,7 @@ class SelectableTest(
         assert c in s.c.bar.proxy_set
 
     def test_no_error_on_unsupported_expr_key(self):
-        from sqlalchemy.sql.expression import BinaryExpression
+        from sqlalchemy_1_3.sql.expression import BinaryExpression
 
         def myop(x, y):
             pass
@@ -792,7 +792,7 @@ class SelectableTest(
     def test_unusual_column_elements_clauselist(self):
         """Test that raw ClauseList is expanded into .c."""
 
-        from sqlalchemy.sql.expression import ClauseList
+        from sqlalchemy_1_3.sql.expression import ClauseList
 
         s = select([table1.c.col1, ClauseList(table1.c.col2, table1.c.col3)])
         eq_(list(s.c), [s.c.col1, s.c.col2, s.c.col3])
@@ -1740,7 +1740,7 @@ class ReduceTest(fixtures.TestBase, AssertsExecutionResults):
             Column("id", Integer, primary_key=True),
             Column("child_name", String(255), default=None),
         )
-        from sqlalchemy.orm.util import polymorphic_union
+        from sqlalchemy_1_3.orm.util import polymorphic_union
 
         item_join = polymorphic_union(
             {
@@ -1957,7 +1957,7 @@ class AnnotationsTest(fixtures.TestBase):
         assert not x_p_a.compare(x_a)
 
     def test_proxy_set_iteration_includes_annotated(self):
-        from sqlalchemy.schema import Column
+        from sqlalchemy_1_3.schema import Column
 
         c1 = Column("foo", Integer)
 
@@ -1978,7 +1978,7 @@ class AnnotationsTest(fixtures.TestBase):
         eq_(d, {"weight": 10})
 
     def test_proxy_set_iteration_includes_annotated_two(self):
-        from sqlalchemy.schema import Column
+        from sqlalchemy_1_3.schema import Column
 
         c1 = Column("foo", Integer)
 
@@ -1994,7 +1994,7 @@ class AnnotationsTest(fixtures.TestBase):
         eq_(d, {"weight": 10})
 
     def test_late_name_add(self):
-        from sqlalchemy.schema import Column
+        from sqlalchemy_1_3.schema import Column
 
         c1 = Column(Integer)
         c1_a = c1._annotate({"foo": "bar"})
@@ -2024,7 +2024,7 @@ class AnnotationsTest(fixtures.TestBase):
         eq_(t.c.x.anon_label, x_a.anon_label)
 
     def test_custom_constructions(self):
-        from sqlalchemy.schema import Column
+        from sqlalchemy_1_3.schema import Column
 
         class MyColumn(Column):
             def __init__(self):
@@ -2045,8 +2045,8 @@ class AnnotationsTest(fixtures.TestBase):
 
     def test_custom_construction_correct_anno_subclass(self):
         # [ticket:2918]
-        from sqlalchemy.schema import Column
-        from sqlalchemy.sql.elements import AnnotatedColumnElement
+        from sqlalchemy_1_3.schema import Column
+        from sqlalchemy_1_3.sql.elements import AnnotatedColumnElement
 
         class MyColumn(Column):
             pass
@@ -2058,7 +2058,7 @@ class AnnotationsTest(fixtures.TestBase):
 
     def test_custom_construction_correct_anno_expr(self):
         # [ticket:2918]
-        from sqlalchemy.schema import Column
+        from sqlalchemy_1_3.schema import Column
 
         class MyColumn(Column):
             pass

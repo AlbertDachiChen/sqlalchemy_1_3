@@ -1,35 +1,35 @@
 # coding: utf-8
 
 
-from sqlalchemy import exc
-from sqlalchemy import FLOAT
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import INTEGER
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import Unicode
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.dialects.oracle.base import BINARY_DOUBLE
-from sqlalchemy.dialects.oracle.base import BINARY_FLOAT
-from sqlalchemy.dialects.oracle.base import DOUBLE_PRECISION
-from sqlalchemy.dialects.oracle.base import NUMBER
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import FLOAT
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import ForeignKeyConstraint
+from sqlalchemy_1_3 import Index
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import INTEGER
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import PrimaryKeyConstraint
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import UniqueConstraint
+from sqlalchemy_1_3.dialects.oracle.base import BINARY_DOUBLE
+from sqlalchemy_1_3.dialects.oracle.base import BINARY_FLOAT
+from sqlalchemy_1_3.dialects.oracle.base import DOUBLE_PRECISION
+from sqlalchemy_1_3.dialects.oracle.base import NUMBER
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class MultiSchemaTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -704,7 +704,7 @@ class DBLinkReflectionTest(fixtures.TestBase):
 
     @classmethod
     def setup_class(cls):
-        from sqlalchemy.testing import config
+        from sqlalchemy_1_3.testing import config
 
         cls.dblink = config.file_config.get("sqla_testing", "oracle_db_link")
 

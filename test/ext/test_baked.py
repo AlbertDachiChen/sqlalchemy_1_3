@@ -1,30 +1,30 @@
 import contextlib
 import itertools
 
-from sqlalchemy import bindparam
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import func
-from sqlalchemy import literal_column
-from sqlalchemy import testing
-from sqlalchemy.ext import baked
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm.query import Query
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.ext import baked
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import defaultload
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import lazyload
+from sqlalchemy_1_3.orm import Load
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm.query import Query
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
 from test.orm import _fixtures
 
 
@@ -344,7 +344,7 @@ class LikeQueryTest(BakedTest):
 
         # simulate race where mapper._get_clause
         # may be generated more than once
-        from sqlalchemy import inspect
+        from sqlalchemy_1_3 import inspect
 
         del inspect(User).__dict__["_get_clause"]
 
@@ -378,7 +378,7 @@ class ResultPostCriteriaTest(BakedTest):
 
     @contextlib.contextmanager
     def _fixture(self):
-        from sqlalchemy import event
+        from sqlalchemy_1_3 import event
 
         User = self.classes.User
 
@@ -1203,7 +1203,7 @@ class LazyLoaderTest(testing.AssertsCompiledSQL, BakedTest):
         sess = Session()
         u1 = sess.query(User).first()
 
-        from sqlalchemy.orm import Query
+        from sqlalchemy_1_3.orm import Query
 
         canary = mock.Mock()
 
@@ -1405,7 +1405,7 @@ class LazyLoaderTest(testing.AssertsCompiledSQL, BakedTest):
             },
         )
 
-        from sqlalchemy.orm.interfaces import MapperOption
+        from sqlalchemy_1_3.orm.interfaces import MapperOption
 
         class MyBogusOption(MapperOption):
             propagate_to_loaders = True
@@ -1482,7 +1482,7 @@ class CustomIntegrationTest(testing.AssertsCompiledSQL, BakedTest):
         return User, Address
 
     def _query_fixture(self):
-        from sqlalchemy.orm.query import Query, _generative
+        from sqlalchemy_1_3.orm.query import Query, _generative
 
         class CachingQuery(Query):
             cache = {}
@@ -1523,7 +1523,7 @@ class CustomIntegrationTest(testing.AssertsCompiledSQL, BakedTest):
         return Session(query_cls=CachingQuery)
 
     def _option_fixture(self):
-        from sqlalchemy.orm.interfaces import MapperOption
+        from sqlalchemy_1_3.orm.interfaces import MapperOption
 
         class RelationshipCache(MapperOption):
 

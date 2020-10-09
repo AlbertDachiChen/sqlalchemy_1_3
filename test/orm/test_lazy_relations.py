@@ -2,37 +2,37 @@
 
 import datetime
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import Integer
-from sqlalchemy import orm
-from sqlalchemy import select
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.interfaces import MapperOption
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.types import TypeDecorator
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import ForeignKeyConstraint
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import orm
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import SmallInteger
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm.interfaces import MapperOption
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
+from sqlalchemy_1_3.types import TypeDecorator
 from test.orm import _fixtures
 
 

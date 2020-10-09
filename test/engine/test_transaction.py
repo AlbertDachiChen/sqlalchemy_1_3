@@ -1,26 +1,26 @@
 import sys
 
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import VARCHAR
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import create_engine
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import INT
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import VARCHAR
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 users, metadata = None, None
@@ -1026,7 +1026,7 @@ class IsolationLevelTest(fixtures.TestBase):
         eq_(c2.get_isolation_level(), self._default_isolation_level())
 
     def test_per_connection(self):
-        from sqlalchemy.pool import QueuePool
+        from sqlalchemy_1_3.pool import QueuePool
 
         eng = testing_engine(
             options=dict(poolclass=QueuePool, pool_size=2, max_overflow=0)

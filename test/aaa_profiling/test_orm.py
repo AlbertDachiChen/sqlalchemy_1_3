@@ -1,27 +1,27 @@
-from sqlalchemy import and_
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import Bundle
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import join as orm_join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import join
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import Bundle
+from sqlalchemy_1_3.orm import configure_mappers
+from sqlalchemy_1_3.orm import defaultload
+from sqlalchemy_1_3.orm import defer
+from sqlalchemy_1_3.orm import join as orm_join
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import Load
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import selectinload
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import sessionmaker
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import profiling
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class MergeTest(fixtures.MappedTest):

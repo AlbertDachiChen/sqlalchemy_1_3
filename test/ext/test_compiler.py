@@ -1,28 +1,28 @@
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import desc
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.ext.compiler import deregister
-from sqlalchemy.schema import CreateColumn
-from sqlalchemy.schema import CreateTable
-from sqlalchemy.schema import DDLElement
-from sqlalchemy.sql.expression import BindParameter
-from sqlalchemy.sql.expression import ClauseElement
-from sqlalchemy.sql.expression import ColumnClause
-from sqlalchemy.sql.expression import FunctionElement
-from sqlalchemy.sql.expression import Select
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.types import TypeEngine
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import desc
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import table
+from sqlalchemy_1_3.ext.compiler import compiles
+from sqlalchemy_1_3.ext.compiler import deregister
+from sqlalchemy_1_3.schema import CreateColumn
+from sqlalchemy_1_3.schema import CreateTable
+from sqlalchemy_1_3.schema import DDLElement
+from sqlalchemy_1_3.sql.expression import BindParameter
+from sqlalchemy_1_3.sql.expression import ClauseElement
+from sqlalchemy_1_3.sql.expression import ColumnClause
+from sqlalchemy_1_3.sql.expression import FunctionElement
+from sqlalchemy_1_3.sql.expression import Select
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.types import TypeEngine
 
 
 class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -78,8 +78,8 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         def visit_pg_type(type_, compiler, **kw):
             return "POSTGRES_FOO"
 
-        from sqlalchemy.dialects.sqlite import base as sqlite
-        from sqlalchemy.dialects.postgresql import base as postgresql
+        from sqlalchemy_1_3.dialects.sqlite import base as sqlite
+        from sqlalchemy_1_3.dialects.postgresql import base as postgresql
 
         self.assert_compile(MyType(), "SQLITE_FOO", dialect=sqlite.dialect())
 
@@ -172,7 +172,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_default_subclass(self):
-        from sqlalchemy.types import ARRAY
+        from sqlalchemy_1_3.types import ARRAY
 
         class MyArray(ARRAY):
             pass
@@ -231,7 +231,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
 
         self.assert_compile(DropThingy(), "DROP THINGY")
 
-        from sqlalchemy.dialects.sqlite import base
+        from sqlalchemy_1_3.dialects.sqlite import base
 
         self.assert_compile(
             AddThingy(), "ADD SPECIAL SL THINGY", dialect=base.dialect()
@@ -252,7 +252,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         self.assert_compile(DropThingy(), "DROP THINGY")
 
     def test_functions(self):
-        from sqlalchemy.dialects import postgresql
+        from sqlalchemy_1_3.dialects import postgresql
 
         class MyUtcFunction(FunctionElement):
             pass
@@ -275,7 +275,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_function_calls_base(self):
-        from sqlalchemy.dialects import mssql
+        from sqlalchemy_1_3.dialects import mssql
 
         class greatest(FunctionElement):
             type = Numeric()
@@ -384,7 +384,7 @@ class DefaultOnExistingTest(fixtures.TestBase, AssertsCompiledSQL):
         s1 = select([t1])
         self.assert_compile(s1, "SELECT t1.c1, t1.c2 FROM t1")
 
-        from sqlalchemy.dialects.sqlite import base as sqlite
+        from sqlalchemy_1_3.dialects.sqlite import base as sqlite
 
         self.assert_compile(s1, "OVERRIDE", dialect=sqlite.dialect())
 

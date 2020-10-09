@@ -3,12 +3,12 @@
 """Tests exceptions and DB-API exception wrapping."""
 
 
-from sqlalchemy import exc as sa_exceptions
-from sqlalchemy.engine import default
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.util import compat
-from sqlalchemy.util import u
+from sqlalchemy_1_3 import exc as sa_exceptions
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.util import compat
+from sqlalchemy_1_3.util import u
 
 
 class Error(Exception):
@@ -116,10 +116,10 @@ class WrapTest(fixtures.TestBase):
         except sa_exceptions.StatementError as err:
             eq_(
                 str(err),
-                "(sqlalchemy.exc.InvalidRequestError) hello\n"
+                "(sqlalchemy_1_3.exc.InvalidRequestError) hello\n"
                 "[SQL: select * from table]\n[parameters: [{'x': 1}]]",
             )
-            eq_(err.args, ("(sqlalchemy.exc.InvalidRequestError) hello",))
+            eq_(err.args, ("(sqlalchemy_1_3.exc.InvalidRequestError) hello",))
 
     def test_statement_error_w_code(self):
         try:
@@ -132,13 +132,13 @@ class WrapTest(fixtures.TestBase):
         except sa_exceptions.StatementError as err:
             eq_(
                 str(err),
-                "(sqlalchemy.exc.InvalidRequestError) hello\n"
+                "(sqlalchemy_1_3.exc.InvalidRequestError) hello\n"
                 "[SQL: select * from table]\n"
                 "[parameters: [{'x': 1}]]\n"
                 "(Background on this error at: http://sqlalche.me/e/%s/abcd)"
                 % sa_exceptions._version_token,
             )
-            eq_(err.args, ("(sqlalchemy.exc.InvalidRequestError) hello",))
+            eq_(err.args, ("(sqlalchemy_1_3.exc.InvalidRequestError) hello",))
 
     def test_wrap_multi_arg(self):
         # this is not supported by the API but oslo_db is doing it

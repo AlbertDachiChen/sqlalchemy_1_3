@@ -1,12 +1,12 @@
-from sqlalchemy import dialects
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_not
+from sqlalchemy_1_3 import dialects
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_not
 
 
 class ImportStarTest(fixtures.TestBase):
     def _all_dialect_packages(self):
         return [
-            getattr(__import__("sqlalchemy.dialects.%s" % d).dialects, d)
+            getattr(__import__("sqlalchemy_1_3.dialects.%s" % d).dialects, d)
             for d in dialects.__all__
             if not d.startswith("_")
         ]

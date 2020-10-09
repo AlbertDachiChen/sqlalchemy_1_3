@@ -1,17 +1,17 @@
 """Test event registration and listening."""
 
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import testing
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.util import gc_collect
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.util import gc_collect
 
 
 class EventsTest(fixtures.TestBase):
@@ -1339,7 +1339,7 @@ class RemovalTest(fixtures.TestBase):
 
     @testing.requires.predictable_gc
     def test_listener_collection_removed_cleanup(self):
-        from sqlalchemy.event import registry
+        from sqlalchemy_1_3.event import registry
 
         Target = self._fixture()
 

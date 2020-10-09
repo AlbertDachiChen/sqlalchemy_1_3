@@ -1,72 +1,72 @@
 import contextlib
 import functools
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import asc
-from sqlalchemy import between
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import collate
-from sqlalchemy import column
-from sqlalchemy import desc
-from sqlalchemy import distinct
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import null
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import Unicode
-from sqlalchemy import union
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import Bundle
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import Query
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.util import join
-from sqlalchemy.orm.util import with_parent
-from sqlalchemy.sql import expression
-from sqlalchemy.sql import operators
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import eq_ignore_whitespace
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import sqlalchemy_1_3 as sa
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import asc
+from sqlalchemy_1_3 import between
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Boolean
+from sqlalchemy_1_3 import cast
+from sqlalchemy_1_3 import collate
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import desc
+from sqlalchemy_1_3 import distinct
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import exists
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import insert
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import null
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import Unicode
+from sqlalchemy_1_3 import union
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import backref
+from sqlalchemy_1_3.orm import Bundle
+from sqlalchemy_1_3.orm import column_property
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import defer
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import lazyload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import Query
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import subqueryload
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm.util import join
+from sqlalchemy_1_3.orm.util import with_parent
+from sqlalchemy_1_3.sql import expression
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_not_
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.assertions import assert_raises
+from sqlalchemy_1_3.testing.assertions import assert_raises_message
+from sqlalchemy_1_3.testing.assertions import eq_
+from sqlalchemy_1_3.testing.assertions import eq_ignore_whitespace
+from sqlalchemy_1_3.testing.assertions import expect_warnings
+from sqlalchemy_1_3.testing.assertsql import CompiledSQL
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -327,8 +327,8 @@ class RowTupleTest(QueryTest):
         eq_(q.column_descriptions, asserted)
 
     def test_unhashable_type(self):
-        from sqlalchemy.types import TypeDecorator, Integer
-        from sqlalchemy.sql import type_coerce
+        from sqlalchemy_1_3.types import TypeDecorator, Integer
+        from sqlalchemy_1_3.sql import type_coerce
 
         class MyType(TypeDecorator):
             impl = Integer
@@ -372,7 +372,7 @@ class BindSensitiveStringifyTest(fixtures.TestBase):
         class MyDialect(default.DefaultDialect):
             default_paramstyle = "qmark"
 
-        from sqlalchemy.engine import base
+        from sqlalchemy_1_3.engine import base
 
         return base.Engine(mock.Mock(), MyDialect(), mock.Mock())
 
@@ -539,7 +539,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
     def test_core_join(self):
         User = self.classes.User
         Address = self.classes.Address
-        from sqlalchemy.sql import join
+        from sqlalchemy_1_3.sql import join
 
         self.assert_compile(
             select([User]).select_from(join(User, Address)),
@@ -576,7 +576,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_update_from_entity(self):
-        from sqlalchemy.sql import update
+        from sqlalchemy_1_3.sql import update
 
         User = self.classes.User
         self.assert_compile(
@@ -590,7 +590,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_delete_from_entity(self):
-        from sqlalchemy.sql import delete
+        from sqlalchemy_1_3.sql import delete
 
         User = self.classes.User
         self.assert_compile(delete(User), "DELETE FROM users")
@@ -602,7 +602,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_insert_from_entity(self):
-        from sqlalchemy.sql import insert
+        from sqlalchemy_1_3.sql import insert
 
         User = self.classes.User
         self.assert_compile(
@@ -2445,7 +2445,7 @@ class ColumnPropertyTest(_fixtures.FixtureTest, AssertsCompiledSQL):
 
 class ComparatorTest(QueryTest):
     def test_clause_element_query_resolve(self):
-        from sqlalchemy.orm.properties import ColumnProperty
+        from sqlalchemy_1_3.orm.properties import ColumnProperty
 
         User = self.classes.User
 
@@ -4013,7 +4013,7 @@ class DistinctTest(QueryTest, AssertsCompiledSQL):
             "not a label"
         )
 
-        from sqlalchemy.dialects import postgresql
+        from sqlalchemy_1_3.dialects import postgresql
 
         assert_raises_message(
             sa_exc.CompileError,
@@ -4245,7 +4245,7 @@ class HintsTest(QueryTest, AssertsCompiledSQL):
     def test_hints(self):
         User = self.classes.User
 
-        from sqlalchemy.dialects import mysql
+        from sqlalchemy_1_3.dialects import mysql
 
         dialect = mysql.dialect()
 
@@ -4458,7 +4458,7 @@ class TextTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_orm_columns_accepts_text(self):
-        from sqlalchemy.orm.base import _orm_columns
+        from sqlalchemy_1_3.orm.base import _orm_columns
 
         t = text("x")
         eq_(_orm_columns(t), [t])

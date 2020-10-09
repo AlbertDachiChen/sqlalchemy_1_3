@@ -1,19 +1,19 @@
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.elements import ClauseList
-from sqlalchemy.sql.elements import ColumnElement
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
+from sqlalchemy_1_3 import and_
+from sqlalchemy_1_3 import bindparam
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import or_
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3.sql import operators
+from sqlalchemy_1_3.sql import util as sql_util
+from sqlalchemy_1_3.sql.elements import ClauseList
+from sqlalchemy_1_3.sql.elements import ColumnElement
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_true
 
 
 class CompareClausesTest(fixtures.TestBase):

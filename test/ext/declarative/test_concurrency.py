@@ -2,18 +2,18 @@ import random
 import threading
 import time
 
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.ext.declarative import declared_attr
+from sqlalchemy_1_3.orm import clear_mappers
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.testing import fixtures
 
 
 class ConcurrentUseDeclMappingTest(fixtures.TestBase):

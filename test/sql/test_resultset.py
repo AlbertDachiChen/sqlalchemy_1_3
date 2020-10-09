@@ -1,44 +1,44 @@
 from contextlib import contextmanager
 import operator
 
-from sqlalchemy import CHAR
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import type_coerce
-from sqlalchemy import TypeDecorator
-from sqlalchemy import util
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import default
-from sqlalchemy.engine import result as _result
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import le_
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.mock import patch
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from sqlalchemy_1_3 import CHAR
+from sqlalchemy_1_3 import column
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import INT
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import literal
+from sqlalchemy_1_3 import literal_column
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import sql
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3 import table
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3 import text
+from sqlalchemy_1_3 import type_coerce
+from sqlalchemy_1_3 import TypeDecorator
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3 import VARCHAR
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.engine import result as _result
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import assertions
+from sqlalchemy_1_3.testing import engines
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import in_
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import le_
+from sqlalchemy_1_3.testing import ne_
+from sqlalchemy_1_3.testing import not_in
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.mock import patch
+from sqlalchemy_1_3.testing.schema import Column
+from sqlalchemy_1_3.testing.schema import Table
 
 
 class ResultProxyTest(fixtures.TablesTest):
@@ -1046,7 +1046,7 @@ class ResultProxyTest(fixtures.TablesTest):
         """ensure the C version of BaseRowProxy handles
         duck-type-dependent rows."""
 
-        from sqlalchemy.engine import RowProxy
+        from sqlalchemy_1_3.engine import RowProxy
 
         class MyList(object):
             def __init__(self, data):
@@ -1109,8 +1109,8 @@ class ResultProxyTest(fixtures.TablesTest):
             eq_(len(mock_rowcount.__get__.mock_calls), 2)
 
     def test_rowproxy_is_sequence(self):
-        from sqlalchemy.util import collections_abc
-        from sqlalchemy.engine import RowProxy
+        from sqlalchemy_1_3.util import collections_abc
+        from sqlalchemy_1_3.engine import RowProxy
 
         row = RowProxy(
             object(),

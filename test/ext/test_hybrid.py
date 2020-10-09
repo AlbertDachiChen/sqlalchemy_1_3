@@ -1,23 +1,23 @@
 from decimal import Decimal
 
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import Numeric
-from sqlalchemy import String
-from sqlalchemy.ext import hybrid
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import persistence
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.schema import Column
+from sqlalchemy_1_3 import ForeignKey
+from sqlalchemy_1_3 import func
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import Numeric
+from sqlalchemy_1_3 import String
+from sqlalchemy_1_3.ext import hybrid
+from sqlalchemy_1_3.ext.declarative import declarative_base
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import persistence
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing.schema import Column
 
 
 class PropertyComparatorTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -707,7 +707,7 @@ class SpecialObjectTest(fixtures.TestBase, AssertsCompiledSQL):
 
     @classmethod
     def setup_class(cls):
-        from sqlalchemy import literal
+        from sqlalchemy_1_3 import literal
 
         symbols = ("usd", "gbp", "cad", "eur", "aud")
         currency_lookup = dict(

@@ -6,13 +6,13 @@ import os
 import re
 import sys
 
-from sqlalchemy.testing import config
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3.testing import config
+from sqlalchemy_1_3.testing import fixtures
 
 
 class DocTest(fixtures.TestBase):
     def _setup_logger(self):
-        rootlogger = logging.getLogger("sqlalchemy.engine.base.Engine")
+        rootlogger = logging.getLogger("sqlalchemy_1_3.engine.base.Engine")
 
         class MyStream(object):
             def write(self, string):
@@ -27,11 +27,11 @@ class DocTest(fixtures.TestBase):
         rootlogger.addHandler(handler)
 
     def _teardown_logger(self):
-        rootlogger = logging.getLogger("sqlalchemy.engine.base.Engine")
+        rootlogger = logging.getLogger("sqlalchemy_1_3.engine.base.Engine")
         rootlogger.removeHandler(self._handler)
 
     def _setup_create_table_patcher(self):
-        from sqlalchemy.sql import ddl
+        from sqlalchemy_1_3.sql import ddl
 
         self.orig_sort = ddl.sort_tables_and_constraints
 
@@ -41,7 +41,7 @@ class DocTest(fixtures.TestBase):
         ddl.sort_tables_and_constraints = our_sort
 
     def _teardown_create_table_patcher(self):
-        from sqlalchemy.sql import ddl
+        from sqlalchemy_1_3.sql import ddl
 
         ddl.sort_tables_and_constraints = self.orig_sort
 

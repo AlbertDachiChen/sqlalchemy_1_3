@@ -1,13 +1,13 @@
-from sqlalchemy import exc
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
+from sqlalchemy_1_3 import exc
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.orm import joinedload
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import relationship
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
 from test.orm import _fixtures
 
 

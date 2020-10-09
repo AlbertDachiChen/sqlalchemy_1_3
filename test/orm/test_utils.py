@@ -1,27 +1,27 @@
-from sqlalchemy import Column
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Table
-from sqlalchemy import util
-from sqlalchemy.ext.hybrid import hybrid_method
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import create_session
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import util as orm_util
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.path_registry import PathRegistry
-from sqlalchemy.orm.path_registry import RootRegistry
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.util import compat
+from sqlalchemy_1_3 import Column
+from sqlalchemy_1_3 import inspect
+from sqlalchemy_1_3 import Integer
+from sqlalchemy_1_3 import MetaData
+from sqlalchemy_1_3 import Table
+from sqlalchemy_1_3 import util
+from sqlalchemy_1_3.ext.hybrid import hybrid_method
+from sqlalchemy_1_3.ext.hybrid import hybrid_property
+from sqlalchemy_1_3.orm import aliased
+from sqlalchemy_1_3.orm import create_session
+from sqlalchemy_1_3.orm import mapper
+from sqlalchemy_1_3.orm import Session
+from sqlalchemy_1_3.orm import synonym
+from sqlalchemy_1_3.orm import util as orm_util
+from sqlalchemy_1_3.orm import with_polymorphic
+from sqlalchemy_1_3.orm.path_registry import PathRegistry
+from sqlalchemy_1_3.orm.path_registry import RootRegistry
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import AssertsCompiledSQL
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import expect_warnings
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.util import compat
 from test.orm import _fixtures
 from .inheritance import _poly_fixtures
 
@@ -135,7 +135,7 @@ class AliasedClassTest(fixtures.TestBase, AssertsCompiledSQL):
         assert alias.thing.method() == "method"
 
     def _assert_has_table(self, expr, table):
-        from sqlalchemy import Column  # override testlib's override
+        from sqlalchemy_1_3 import Column  # override testlib's override
 
         for child in expr.get_children():
             if isinstance(child, Column):

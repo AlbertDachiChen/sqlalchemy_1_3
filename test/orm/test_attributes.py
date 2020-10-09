@@ -1,24 +1,24 @@
 import pickle
 
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.orm.state import InstanceState
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.util import all_partial_orderings
-from sqlalchemy.testing.util import gc_collect
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import exc as sa_exc
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.orm import attributes
+from sqlalchemy_1_3.orm import exc as orm_exc
+from sqlalchemy_1_3.orm import instrumentation
+from sqlalchemy_1_3.orm.collections import collection
+from sqlalchemy_1_3.orm.state import InstanceState
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_false
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.util import all_partial_orderings
+from sqlalchemy_1_3.testing.util import gc_collect
 
 
 # global for pickling tests
@@ -2591,7 +2591,7 @@ class HistoryTest(fixtures.TestBase):
         class Bar(fixtures.BasicEntity):
             pass
 
-        from sqlalchemy.orm.collections import attribute_mapped_collection
+        from sqlalchemy_1_3.orm.collections import attribute_mapped_collection
 
         instrumentation.register_class(Foo)
         instrumentation.register_class(Bar)

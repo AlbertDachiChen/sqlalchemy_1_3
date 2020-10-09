@@ -13,7 +13,7 @@ database in process.
 import logging
 import sys
 
-from sqlalchemy.testing import provision
+from sqlalchemy_1_3.testing import provision
 
 
 logging.basicConfig()

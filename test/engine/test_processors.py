@@ -1,6 +1,6 @@
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
 
 
 class _BooleanProcessorTest(fixtures.TestBase):
@@ -25,7 +25,7 @@ class CBooleanProcessorTest(_BooleanProcessorTest):
 
     @classmethod
     def setup_class(cls):
-        from sqlalchemy import cprocessors
+        from sqlalchemy_1_3 import cprocessors
 
         cls.module = cprocessors
 
@@ -83,7 +83,7 @@ class _DateProcessorTest(fixtures.TestBase):
 class PyDateProcessorTest(_DateProcessorTest):
     @classmethod
     def setup_class(cls):
-        from sqlalchemy import processors
+        from sqlalchemy_1_3 import processors
 
         cls.module = type(
             "util",
@@ -100,7 +100,7 @@ class CDateProcessorTest(_DateProcessorTest):
 
     @classmethod
     def setup_class(cls):
-        from sqlalchemy import cprocessors
+        from sqlalchemy_1_3 import cprocessors
 
         cls.module = cprocessors
 
@@ -178,7 +178,7 @@ class _DistillArgsTest(fixtures.TestBase):
 class PyDistillArgsTest(_DistillArgsTest):
     @classmethod
     def setup_class(cls):
-        from sqlalchemy.engine import util
+        from sqlalchemy_1_3.engine import util
 
         cls.module = type(
             "util",
@@ -195,6 +195,6 @@ class CDistillArgsTest(_DistillArgsTest):
 
     @classmethod
     def setup_class(cls):
-        from sqlalchemy import cutils as util
+        from sqlalchemy_1_3 import cutils as util
 
         cls.module = util

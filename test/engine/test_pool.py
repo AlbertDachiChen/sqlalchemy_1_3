@@ -4,28 +4,28 @@ import threading
 import time
 import weakref
 
-import sqlalchemy as tsa
-from sqlalchemy import event
-from sqlalchemy import pool
-from sqlalchemy import select
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_context_ok
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.mock import ANY
-from sqlalchemy.testing.mock import call
-from sqlalchemy.testing.mock import Mock
-from sqlalchemy.testing.mock import patch
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.testing.util import lazy_gc
+import sqlalchemy_1_3 as tsa
+from sqlalchemy_1_3 import event
+from sqlalchemy_1_3 import pool
+from sqlalchemy_1_3 import select
+from sqlalchemy_1_3 import testing
+from sqlalchemy_1_3.engine import default
+from sqlalchemy_1_3.testing import assert_raises
+from sqlalchemy_1_3.testing import assert_raises_context_ok
+from sqlalchemy_1_3.testing import assert_raises_message
+from sqlalchemy_1_3.testing import eq_
+from sqlalchemy_1_3.testing import fixtures
+from sqlalchemy_1_3.testing import is_
+from sqlalchemy_1_3.testing import is_not
+from sqlalchemy_1_3.testing import is_true
+from sqlalchemy_1_3.testing import mock
+from sqlalchemy_1_3.testing.engines import testing_engine
+from sqlalchemy_1_3.testing.mock import ANY
+from sqlalchemy_1_3.testing.mock import call
+from sqlalchemy_1_3.testing.mock import Mock
+from sqlalchemy_1_3.testing.mock import patch
+from sqlalchemy_1_3.testing.util import gc_collect
+from sqlalchemy_1_3.testing.util import lazy_gc
 
 join_timeout = 10
 
@@ -1106,7 +1106,7 @@ class QueuePoolTest(PoolTestBase):
             return fairy
 
         with patch(
-            "sqlalchemy.pool._ConnectionRecord.checkout",
+            "sqlalchemy_1_3.pool._ConnectionRecord.checkout",
             _decorate_existing_checkout,
         ):
             conn = p.connect()
@@ -1227,7 +1227,7 @@ class QueuePoolTest(PoolTestBase):
         )
 
     def test_recycle(self):
-        with patch("sqlalchemy.pool.base.time.time") as mock:
+        with patch("sqlalchemy_1_3.pool.base.time.time") as mock:
             mock.return_value = 10000
 
             p = self._queuepool_fixture(
@@ -1503,7 +1503,7 @@ class QueuePoolTest(PoolTestBase):
 
         p1 = TrackQueuePool(creator=creator, pool_size=20)
 
-        from sqlalchemy import create_engine
+        from sqlalchemy_1_3 import create_engine
 
         eng = create_engine(testing.db.url, pool=p1, _initialize=False)
         eng.dialect = dialect
